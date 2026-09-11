@@ -20,7 +20,7 @@
           "AuthenticationKind": "OAuth2",
           "kind": "SQL",
           "path": "yvpqbupzx7kufapfd474wcexte-5bh5o7llmmnuta22i6u45pycty.datawarehouse.fabric.microsoft.com;VUSDWHPRO",
-          "Expires": "Fri, 04 Sep 2026 11:41:20 GMT"
+          "Expires": "Wed, 09 Sep 2026 05:45:34 GMT"
         }
       }
     ],
@@ -7100,6 +7100,31 @@
             "name": "Show_Time_Group",
             "dataType": "string",
             "sourceColumn": "Show_Time_Group"
+          },
+          {
+            "name": "Dur_Lead_To_Show_Days",
+            "dataType": "int64",
+            "sourceColumn": "Dur_Lead_To_Show_Days"
+          },
+          {
+            "name": "Dur_Lead_To_Show_Months",
+            "dataType": "double",
+            "sourceColumn": "Dur_Lead_To_Show_Months"
+          },
+          {
+            "name": "Lead_Created_Date",
+            "dataType": "dateTime",
+            "sourceColumn": "Lead_Created_Date"
+          },
+          {
+            "name": "Lead_Created_Month",
+            "dataType": "dateTime",
+            "sourceColumn": "Lead_Created_Month"
+          },
+          {
+            "name": "Show_Month",
+            "dataType": "dateTime",
+            "sourceColumn": "Show_Month"
           }
         ],
         "partitions": [
@@ -7760,6 +7785,10 @@
             "name": "% Show2Sign >72h",
             "expression": " DIVIDE([# of Show2Sign >72h],'ASA Enquiries'[# of Enquiries])",
             "formatString": "0%;-0%;0%"
+          },
+          {
+            "name": "% ASA Total KKHT_TN TGD",
+            "expression": " ('ASA Push Sale'[# of HVKK Tai GD] + 'ASA Push Sale'[# of HVKK TN TGD])/('ASA Overview PD'[# of KKHT TGD Target] + 'ASA Overview PD'[# of Pending Target])"
           }
         ]
       },
@@ -78172,1210 +78201,1522 @@
         "members": [
           {
             "memberName": "nhely@vus-etsc.edu.vn",
+            "memberId": "nhely@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "quocle@vus-etsc.edu.vn",
+            "memberId": "quocle@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "hien.ltv@vus-etsc.edu.vn",
+            "memberId": "hien.ltv@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "trantranqui@vus-etsc.edu.vn",
+            "memberId": "trantranqui@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "trinhpham@vus-etsc.edu.vn",
+            "memberId": "trinhpham@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "ict24h@vus-etsc.edu.vn",
+            "memberId": "ict24h@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "tungvo@vus-etsc.edu.vn",
+            "memberId": "tungvo@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "tutrant@vus-etsc.edu.vn",
+            "memberId": "tutrant@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thunguyenh@vus-etsc.edu.vn",
+            "memberId": "thunguyenh@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "ngocle@vus-etsc.edu.vn",
+            "memberId": "ngocle@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "nghianguyen@vus-etsc.edu.vn",
+            "memberId": "nghianguyen@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "tientrant@vus-etsc.edu.vn",
+            "memberId": "tientrant@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "tramnguyentn@vus-etsc.edu.vn",
+            "memberId": "tramnguyentn@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "minhduc.nguyen@vus-etsc.edu.vn",
+            "memberId": "minhduc.nguyen@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thaonguyennm@vus-etsc.edu.vn",
+            "memberId": "thaonguyennm@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "tungngo@vus-etsc.edu.vn",
+            "memberId": "tungngo@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thu.nth@vus-etsc.edu.vn",
+            "memberId": "thu.nth@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thuyencao@vus-etsc.edu.vn",
+            "memberId": "thuyencao@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "vy.vnt@vus-etsc.edu.vn",
+            "memberId": "vy.vnt@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "anh.phan@vus-etsc.edu.vn",
+            "memberId": "anh.phan@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "mynguyen@vus-etsc.edu.vn",
+            "memberId": "mynguyen@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "quandao@vus-etsc.edu.vn",
+            "memberId": "quandao@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "phucho@vus-etsc.edu.vn",
+            "memberId": "phucho@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "anlethuy@vus-etsc.edu.vn",
+            "memberId": "anlethuy@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "dungha@vus-etsc.edu.vn",
+            "memberId": "dungha@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "quethanh.le@vus-etsc.edu.vn",
+            "memberId": "quethanh.le@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "tuantruong@vus-etsc.edu.vn",
+            "memberId": "tuantruong@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "ngoc.nvh@vus-etsc.edu.vn",
+            "memberId": "ngoc.nvh@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "maitramtran@vus-etsc.edu.vn",
+            "memberId": "maitramtran@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "quynhlqt@vus-etsc.edu.vn",
+            "memberId": "quynhlqt@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thaoha@vus-etsc.edu.vn",
+            "memberId": "thaoha@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "phongngo@vus-etsc.edu.vn",
+            "memberId": "phongngo@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thaonguyen@vus-etsc.edu.vn",
+            "memberId": "thaonguyen@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "trinhdo@vus-etsc.edu.vn",
+            "memberId": "trinhdo@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "nguyettran@vus-etsc.edu.vn",
+            "memberId": "nguyettran@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "quyendoan@vus-etsc.edu.vn",
+            "memberId": "quyendoan@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "nguyenhuynha@vus-etsc.edu.vn",
+            "memberId": "nguyenhuynha@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "hoang.nn@vus-etsc.edu.vn",
+            "memberId": "hoang.nn@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "khuyennguyen@vus-etsc.edu.vn",
+            "memberId": "khuyennguyen@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "phuong.ntk@vus-etsc.edu.vn",
+            "memberId": "phuong.ntk@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "diemntn@vus-etsc.edu.vn",
+            "memberId": "diemntn@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "loannguyenthu@vus-etsc.edu.vn",
+            "memberId": "loannguyenthu@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "hoapham@vus-etsc.edu.vn",
+            "memberId": "hoapham@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "dungtt@vus-etsc.edu.vn",
+            "memberId": "dungtt@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "cuongtran@vus-etsc.edu.vn",
+            "memberId": "cuongtran@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "quynhtran@vus-etsc.edu.vn",
+            "memberId": "quynhtran@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thytran@vus-etsc.edu.vn",
+            "memberId": "thytran@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "duyen.cnt@vus-etsc.edu.vn",
+            "memberId": "duyen.cnt@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "trang.dtt@vus-etsc.edu.vn",
+            "memberId": "trang.dtt@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thuyle@vus-etsc.edu.vn",
+            "memberId": "thuyle@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "ha.ltt@vus-etsc.edu.vn",
+            "memberId": "ha.ltt@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "yen.nguyen@vus-etsc.edu.vn",
+            "memberId": "yen.nguyen@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "phucduong@vus-etsc.edu.vn",
+            "memberId": "phucduong@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "hiep.pham@vus-etsc.edu.vn",
+            "memberId": "hiep.pham@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "ngoc.ndn@vus-etsc.edu.vn",
+            "memberId": "ngoc.ndn@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thu.hty@vus-etsc.edu.vn",
+            "memberId": "thu.hty@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "khanhnguyen@vus-etsc.edu.vn",
+            "memberId": "khanhnguyen@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "phutran@vus-etsc.edu.vn",
+            "memberId": "phutran@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "khoatran@vus-etsc.edu.vn",
+            "memberId": "khoatran@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thuyntb@vus-etsc.edu.vn",
+            "memberId": "thuyntb@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thuvu@vus-etsc.edu.vn",
+            "memberId": "thuvu@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "hungho@vus-etsc.edu.vn",
+            "memberId": "hungho@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "dung.nguyen@vus-etsc.edu.vn",
+            "memberId": "dung.nguyen@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "huongle@vus-etsc.edu.vn",
+            "memberId": "huongle@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "kiennguyen@vus-etsc.edu.vn",
+            "memberId": "kiennguyen@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "nhu.nnq@vus-etsc.edu.vn",
+            "memberId": "nhu.nnq@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "nhule@vus-etsc.edu.vn",
+            "memberId": "nhule@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "hang.lt@vus-etsc.edu.vn",
+            "memberId": "hang.lt@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "anhntl@vus-etsc.edu.vn",
+            "memberId": "anhntl@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "nhuhuynh@vus-etsc.edu.vn",
+            "memberId": "nhuhuynh@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thaohoang@vus-etsc.edu.vn",
+            "memberId": "thaohoang@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "tramndh@vus-etsc.edu.vn",
+            "memberId": "tramndh@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "ninhvo@vus-etsc.edu.vn",
+            "memberId": "ninhvo@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "duongle@vus-etsc.edu.vn",
+            "memberId": "duongle@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "duongnguyent@vus-etsc.edu.vn",
+            "memberId": "duongnguyent@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thuy.btm@vus-etsc.edu.vn",
+            "memberId": "thuy.btm@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "trangnguyen@vus-etsc.edu.vn",
+            "memberId": "trangnguyen@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "linh.ntp@vus-etsc.edu.vn",
+            "memberId": "linh.ntp@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thao.nguyen@vus-etsc.edu.vn",
+            "memberId": "thao.nguyen@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "QUYNHLE@vus-etsc.edu.vn",
+            "memberId": "QUYNHLE@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "lenguyen@vus-etsc.edu.vn",
+            "memberId": "lenguyen@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "binhle@vus-etsc.edu.vn",
+            "memberId": "binhle@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "daonx@vus-etsc.edu.vn",
+            "memberId": "daonx@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "anh.nguyenthien@vus-etsc.edu.vn",
+            "memberId": "anh.nguyenthien@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "lanh.pham@vus-etsc.edu.vn",
+            "memberId": "lanh.pham@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "phuc.nguyenhoang@vus-etsc.edu.vn",
+            "memberId": "phuc.nguyenhoang@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "y.nguyen@vus-etsc.edu.vn",
+            "memberId": "y.nguyen@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thaovo@vus-etsc.edu.vn",
+            "memberId": "thaovo@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "anhphan@vus-etsc.edu.vn",
+            "memberId": "anhphan@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "daobui@vus-etsc.edu.vn",
+            "memberId": "daobui@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "tuongvi.nguyenthi@vus-etsc.edu.vn",
+            "memberId": "tuongvi.nguyenthi@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "ty.le@vus-etsc.edu.vn",
+            "memberId": "ty.le@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "ngoc.le@vus-etsc.edu.vn",
+            "memberId": "ngoc.le@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "anh.phung@vus-etsc.edu.vn",
+            "memberId": "anh.phung@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thao.hln@vus-etsc.edu.vn",
+            "memberId": "thao.hln@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "trungnghianguyen@vus-etsc.edu.vn",
+            "memberId": "trungnghianguyen@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "duong.ltt@vus-etsc.edu.vn",
+            "memberId": "duong.ltt@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "ngocanhha@vus-etsc.edu.vn",
+            "memberId": "ngocanhha@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "phuong.nh@vus-etsc.edu.vn",
+            "memberId": "phuong.nh@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thaovy.phamthi@vus-etsc.edu.vn",
+            "memberId": "thaovy.phamthi@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "hientruong@vus-etsc.edu.vn",
+            "memberId": "hientruong@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "vantran@vus-etsc.edu.vn",
+            "memberId": "vantran@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "nhunguyen.tq@vus-etsc.edu.vn",
+            "memberId": "nhunguyen.tq@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "hanto@vus-etsc.edu.vn",
+            "memberId": "hanto@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "nhung.nguyenngoc@vus-etsc.edu.vn",
+            "memberId": "nhung.nguyenngoc@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "nguyenthimyuyen@vus-etsc.edu.vn",
+            "memberId": "nguyenthimyuyen@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "duy.ngo@vus-etsc.edu.vn",
+            "memberId": "duy.ngo@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "hongsenhuynh@vus-etsc.edu.vn",
+            "memberId": "hongsenhuynh@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "minhthuy.nguyen@vus-etsc.edu.vn",
+            "memberId": "minhthuy.nguyen@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thaivan@vus-etsc.edu.vn",
+            "memberId": "thaivan@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "nganvo@vus-etsc.edu.vn",
+            "memberId": "nganvo@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "tien.nguyenut@vus-etsc.edu.vn",
+            "memberId": "tien.nguyenut@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "nhi.nna@vus-etsc.edu.vn",
+            "memberId": "nhi.nna@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thom.dt@vus-etsc.edu.vn",
+            "memberId": "thom.dt@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "trinh.tlt@vus-etsc.edu.vn",
+            "memberId": "trinh.tlt@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "nganpham.t@vus-etsc.edu.vn",
+            "memberId": "nganpham.t@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "giaungoc@vus-etsc.edu.vn",
+            "memberId": "giaungoc@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thuytrangtruongthi@vus-etsc.edu.vn",
+            "memberId": "thuytrangtruongthi@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thoho@vus-etsc.edu.vn",
+            "memberId": "thoho@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "nghi.vo@vus-etsc.edu.vn",
+            "memberId": "nghi.vo@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "ngocchau.nguyenthi@vus-etsc.edu.vn",
+            "memberId": "ngocchau.nguyenthi@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "diem.nbp@vus-etsc.edu.vn",
+            "memberId": "diem.nbp@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thaomai@vus-etsc.edu.vn",
+            "memberId": "thaomai@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "trang.ttt@vus-etsc.edu.vn",
+            "memberId": "trang.ttt@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "vy.huynh@vus-etsc.edu.vn",
+            "memberId": "vy.huynh@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "anh.ndm@vus-etsc.edu.vn",
+            "memberId": "anh.ndm@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "quangpd@vus-etsc.edu.vn",
+            "memberId": "quangpd@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "danhvo@vus-etsc.edu.vn",
+            "memberId": "danhvo@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "trinh.tran@vus-etsc.edu.vn",
+            "memberId": "trinh.tran@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "hieu.nn@vus-etsc.edu.vn",
+            "memberId": "hieu.nn@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "vy.ngo@vus-etsc.edu.vn",
+            "memberId": "vy.ngo@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "tuyennguyen@vus-etsc.edu.vn",
+            "memberId": "tuyennguyen@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "vinh.nq@vus-etsc.edu.vn",
+            "memberId": "vinh.nq@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "ceo.room@vus-etsc.edu.vn",
+            "memberId": "ceo.room@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "chau.tran@vus-etsc.edu.vn",
+            "memberId": "chau.tran@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "quynh.tran@vus-etsc.edu.vn",
+            "memberId": "quynh.tran@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thantc@vus-etsc.edu.vn",
+            "memberId": "thantc@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "phuong.nguyent@vus-etsc.edu.vn",
+            "memberId": "phuong.nguyent@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "hapham@vus-etsc.edu.vn",
+            "memberId": "hapham@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thao.tranthi@vus-etsc.edu.vn",
+            "memberId": "thao.tranthi@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "huong.nt@vus-etsc.edu.vn",
+            "memberId": "huong.nt@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "nhu.luq@vus-etsc.edu.vn",
+            "memberId": "nhu.luq@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "huongvo@vus-etsc.edu.vn",
+            "memberId": "huongvo@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "vyhuynh@vus-etsc.edu.vn",
+            "memberId": "vyhuynh@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "tuyen.ntm@vus-etsc.edu.vn",
+            "memberId": "tuyen.ntm@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "trungdoan@vus-etsc.edu.vn",
+            "memberId": "trungdoan@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "hang.nguyenm@vus-etsc.edu.vn",
+            "memberId": "hang.nguyenm@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "hong.nguyen@vus-etsc.edu.vn",
+            "memberId": "hong.nguyen@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "luandang@vus-etsc.edu.vn",
+            "memberId": "luandang@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "trang.th@vus-etsc.edu.vn",
+            "memberId": "trang.th@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "duy.tranduong@vus-etsc.edu.vn",
+            "memberId": "duy.tranduong@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "nganchu@vus-etsc.edu.vn",
+            "memberId": "nganchu@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "tran.huynh@vus-etsc.edu.vn",
+            "memberId": "tran.huynh@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "ha.tran@vus-etsc.edu.vn",
+            "memberId": "ha.tran@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "ha.nguyen@vus-etsc.edu.vn",
+            "memberId": "ha.nguyen@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "phuongnghi.ho@vus-etsc.edu.vn",
+            "memberId": "phuongnghi.ho@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "trang.ntd@vus-etsc.edu.vn",
+            "memberId": "trang.ntd@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "nhi.nguyent@vus-etsc.edu.vn",
+            "memberId": "nhi.nguyent@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "huong.tran@vus-etsc.edu.vn",
+            "memberId": "huong.tran@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thuy.nc@vus-etsc.edu.vn",
+            "memberId": "thuy.nc@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "huynhtai.nguyen@vus-etsc.edu.vn",
+            "memberId": "huynhtai.nguyen@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "kieutrang.nguyen@vus-etsc.edu.vn",
+            "memberId": "kieutrang.nguyen@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "nghialuong@vus-etsc.edu.vn",
+            "memberId": "nghialuong@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thaoht@vus-etsc.edu.vn",
+            "memberId": "thaoht@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "huyenvt@vus-etsc.edu.vn",
+            "memberId": "huyenvt@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "phale@vus-etsc.edu.vn",
+            "memberId": "phale@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "ycai@vus-etsc.edu.vn",
+            "memberId": "ycai@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "ha.nguyent@vus-etsc.edu.vn",
+            "memberId": "ha.nguyent@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "khang.vo@vus-etsc.edu.vn",
+            "memberId": "khang.vo@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "tri.nguyenhong@vus-etsc.edu.vn",
+            "memberId": "tri.nguyenhong@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "nguyennghiem@vus-etsc.edu.vn",
+            "memberId": "nguyennghiem@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "diemvo@vus-etsc.edu.vn",
+            "memberId": "diemvo@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thuydiemnguyenthi@vus-etsc.edu.vn",
+            "memberId": "thuydiemnguyenthi@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "ha.thu@vus-etsc.edu.vn",
+            "memberId": "ha.thu@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "tra.nnh@vus-etsc.edu.vn",
+            "memberId": "tra.nnh@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "chi.nnt@vus-etsc.edu.vn",
+            "memberId": "chi.nnt@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "trinhntq@vus-etsc.edu.vn",
+            "memberId": "trinhntq@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "dung.nh@vus-etsc.edu.vn",
+            "memberId": "dung.nh@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "nguyen.dau@vus-etsc.edu.vn",
+            "memberId": "nguyen.dau@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "trangcai@vus-etsc.edu.vn",
+            "memberId": "trangcai@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "phuc.nn@vus-etsc.edu.vn",
+            "memberId": "phuc.nn@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "quang.nguyen@vus-etsc.edu.vn",
+            "memberId": "quang.nguyen@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "tai.nguyenhuu@vus-etsc.edu.vn",
+            "memberId": "tai.nguyenhuu@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "huyen.nan@vus-etsc.edu.vn",
+            "memberId": "huyen.nan@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thomnguyent@vus-etsc.edu.vn",
+            "memberId": "thomnguyent@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thuy.tv@vus-etsc.edu.vn",
+            "memberId": "thuy.tv@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "trinh.nkp@vus-etsc.edu.vn",
+            "memberId": "trinh.nkp@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "tuyenngo@vus-etsc.edu.vn",
+            "memberId": "tuyenngo@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "ngocphan@vus-etsc.edu.vn",
+            "memberId": "ngocphan@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "tinh.pham@vus-etsc.edu.vn",
+            "memberId": "tinh.pham@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "long.huynh@vus-etsc.edu.vn",
+            "memberId": "long.huynh@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thuphamt@vus-etsc.edu.vn",
+            "memberId": "thuphamt@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "cuongtruong@vus-etsc.edu.vn",
+            "memberId": "cuongtruong@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "si.bui@vus-etsc.edu.vn",
+            "memberId": "si.bui@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "tien.tranmanh@vus-etsc.edu.vn",
+            "memberId": "tien.tranmanh@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "hien.tm@vus-etsc.edu.vn",
+            "memberId": "hien.tm@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "hau.nguyent@vus-etsc.edu.vn",
+            "memberId": "hau.nguyent@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "nhy.nguyen@vus-etsc.edu.vn",
+            "memberId": "nhy.nguyen@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "truclinhnguyen@vus-etsc.edu.vn",
+            "memberId": "truclinhnguyen@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "trangtranq@vus-etsc.edu.vn",
+            "memberId": "trangtranq@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "tuanhang@vus-etsc.edu.vn",
+            "memberId": "tuanhang@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "ngocdam@vus-etsc.edu.vn",
+            "memberId": "ngocdam@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "chau.tt@vus-etsc.edu.vn",
+            "memberId": "chau.tt@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "tram.ttn@vus-etsc.edu.vn",
+            "memberId": "tram.ttn@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "duyentran@vus-etsc.edu.vn",
+            "memberId": "duyentran@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "luan.nguyen@vus-etsc.edu.vn",
+            "memberId": "luan.nguyen@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "ha.le@vus-etsc.edu.vn",
+            "memberId": "ha.le@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "marketing@vus-etsc.edu.vn",
+            "memberId": "marketing@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "taint@vus-etsc.edu.vn",
+            "memberId": "taint@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "kienvo@vus-etsc.edu.vn",
+            "memberId": "kienvo@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "anhld@vus-etsc.edu.vn",
+            "memberId": "anhld@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "khue.lai@vus-etsc.edu.vn",
+            "memberId": "khue.lai@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "vinh.vu@vus-etsc.edu.vn",
+            "memberId": "vinh.vu@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "ngan.ptth@vus-etsc.edu.vn",
+            "memberId": "ngan.ptth@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "anh.dnp@vus-etsc.edu.vn",
+            "memberId": "anh.dnp@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thaonguyentt@vus-etsc.edu.vn",
+            "memberId": "thaonguyentt@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "ngandoan@vus-etsc.edu.vn",
+            "memberId": "ngandoan@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "linh.lethuy@vus-etsc.edu.vn",
+            "memberId": "linh.lethuy@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "oanh.pth@vus-etsc.edu.vn",
+            "memberId": "oanh.pth@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "vunhatha@vus-etsc.edu.vn",
+            "memberId": "vunhatha@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "nguyenthithuthuy@vus-etsc.edu.vn",
+            "memberId": "nguyenthithuthuy@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "phamlelinhdan@vus-etsc.edu.vn",
+            "memberId": "phamlelinhdan@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "tranaiman@vus-etsc.edu.vn",
+            "memberId": "tranaiman@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "hoanghuy.pham@vus-etsc.edu.vn",
+            "memberId": "hoanghuy.pham@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thienthanh.ln@vus-etsc.edu.vn",
+            "memberId": "thienthanh.ln@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "an.tran@vus-etsc.edu.vn",
+            "memberId": "an.tran@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "nhunq@vus-etsc.edu.vn",
+            "memberId": "nhunq@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "khang.nguyen@vus-etsc.edu.vn",
+            "memberId": "khang.nguyen@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "dangquocvu@vus-etsc.edu.vn",
+            "memberId": "dangquocvu@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "vothiquynhchi@vus-etsc.edu.vn",
+            "memberId": "vothiquynhchi@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "duytruong@vus-etsc.edu.vn",
+            "memberId": "duytruong@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "sonphung@vus-etsc.edu.vn",
+            "memberId": "sonphung@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "tranbichngan@vus-etsc.edu.vn",
+            "memberId": "tranbichngan@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "vy.dh@vus-etsc.edu.vn",
+            "memberId": "vy.dh@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "linh.npm@vus-etsc.edu.vn",
+            "memberId": "linh.npm@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "khangluu@vus-etsc.edu.vn",
+            "memberId": "khangluu@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "quyenle@vus-etsc.edu.vn",
+            "memberId": "quyenle@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "lukieuphuong@vus-etsc.edu.vn",
+            "memberId": "lukieuphuong@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "vungocbichdoan@vus-etsc.edu.vn",
+            "memberId": "vungocbichdoan@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "truongchithan@vus-etsc.edu.vn",
+            "memberId": "truongchithan@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "POC-Fabric@vus-etsc.edu.vn",
+            "memberId": "POC-Fabric@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "nhonnguyentrung@vus-etsc.edu.vn",
+            "memberId": "nhonnguyentrung@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "trandangkhoa@vus-etsc.edu.vn",
+            "memberId": "trandangkhoa@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "phamthihonghieu@vus-etsc.edu.vn",
+            "memberId": "phamthihonghieu@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "truongngocthanhvy@vus-etsc.edu.vn",
+            "memberId": "truongngocthanhvy@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "trinhthiphuongtuong@vus-etsc.edu.vn",
+            "memberId": "trinhthiphuongtuong@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "khanhquoc@vus-etsc.edu.vn",
+            "memberId": "khanhquoc@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "huyle@vus-etsc.edu.vn",
+            "memberId": "huyle@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "phamlamoanh@vus-etsc.edu.vn",
+            "memberId": "phamlamoanh@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "nguyenthihanhhoa@vus-etsc.edu.vn",
+            "memberId": "nguyenthihanhhoa@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "phamquocsi@vus-etsc.edu.vn",
+            "memberId": "phamquocsi@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "linhtran@vus-etsc.edu.vn",
+            "memberId": "linhtran@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "uyen.duong@vus-etsc.edu.vn",
+            "memberId": "uyen.duong@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "duongdangl@vus-etsc.edu.vn",
+            "memberId": "duongdangl@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "nhu.ntq@vus-etsc.edu.vn",
+            "memberId": "nhu.ntq@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thudta@vus-etsc.edu.vn",
+            "memberId": "thudta@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "yenvuong@vus-etsc.edu.vn",
+            "memberId": "yenvuong@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "luongnguyen@vus-etsc.edu.vn",
+            "memberId": "luongnguyen@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "tutran@vus-etsc.edu.vn",
+            "memberId": "tutran@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "datateamtest@vus-etsc.edu.vn",
+            "memberId": "datateamtest@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "lethuygiang@vus-etsc.edu.vn",
+            "memberId": "lethuygiang@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "truongthiquynh@vus-etsc.edu.vn",
+            "memberId": "truongthiquynh@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "tramho@vus-etsc.edu.vn",
+            "memberId": "tramho@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "nguyenthihongxuyen@vus-etsc.edu.vn",
+            "memberId": "nguyenthihongxuyen@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "cmc-azure@vus-etsc.edu.vn",
+            "memberId": "cmc-azure@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "longtruong@vus-etsc.edu.vn",
+            "memberId": "longtruong@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "tranngocanh@vus-etsc.edu.vn",
+            "memberId": "tranngocanh@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "trinhbinhthanhson@vus-etsc.edu.vn",
+            "memberId": "trinhbinhthanhson@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "nguyenthibichtram@vus-etsc.edu.vn",
+            "memberId": "nguyenthibichtram@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thu.nt@vus-etsc.edu.vn",
+            "memberId": "thu.nt@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "nguyenthiminhtrang@vus-etsc.edu.vn",
+            "memberId": "nguyenthiminhtrang@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "locvo@vus-etsc.edu.vn",
+            "memberId": "locvo@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "maihongvan@vus-etsc.edu.vn",
+            "memberId": "maihongvan@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "nguyenngocvankhanh@vus-etsc.edu.vn",
+            "memberId": "nguyenngocvankhanh@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "phanquangvu1@vus-etsc.edu.vn",
+            "memberId": "phanquangvu1@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "khangbhh@vus-etsc.edu.vn",
+            "memberId": "khangbhh@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "tranthithuthuy@vus-etsc.edu.vn",
+            "memberId": "tranthithuthuy@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "ngokhanhmy@vus-etsc.edu.vn",
+            "memberId": "ngokhanhmy@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "lehanh@vus-etsc.edu.vn",
+            "memberId": "lehanh@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "hangtranquynhnhu@vus-etsc.edu.vn",
+            "memberId": "hangtranquynhnhu@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "lethihongvan@vus-etsc.edu.vn",
+            "memberId": "lethihongvan@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "lengochuyentran@vus-etsc.edu.vn",
+            "memberId": "lengochuyentran@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "buitanlinh@vus-etsc.edu.vn",
+            "memberId": "buitanlinh@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "nguyenthithuyvan@vus-etsc.edu.vn",
+            "memberId": "nguyenthithuyvan@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "lengocphuonghuyen@vus-etsc.edu.vn",
+            "memberId": "lengocphuonghuyen@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "leminhquan@vus-etsc.edu.vn",
+            "memberId": "leminhquan@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "dmksup.hcm@vus-etsc.edu.vn",
+            "memberId": "dmksup.hcm@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "luuthibinhyen@vus-etsc.edu.vn",
+            "memberId": "luuthibinhyen@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "edt.data@vus-etsc.edu.vn",
+            "memberId": "edt.data@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "lethihongngoc@vus-etsc.edu.vn",
+            "memberId": "lethihongngoc@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "giangnguyen.tt@vus-etsc.edu.vn",
+            "memberId": "giangnguyen.tt@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "nguyenngocphuong1@vus-etsc.edu.vn",
+            "memberId": "nguyenngocphuong1@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "vutuananh@vus-etsc.edu.vn",
+            "memberId": "vutuananh@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "truongthithutruc@vus-etsc.edu.vn",
+            "memberId": "truongthithutruc@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "mekong@vus-etsc.edu.vn",
+            "memberId": "mekong@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "nguyenvuthaovi@vus-etsc.edu.vn",
+            "memberId": "nguyenvuthaovi@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "lehoangbao@vus-etsc.edu.vn",
+            "memberId": "lehoangbao@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "lenguyenbinhphuong@vus-etsc.edu.vn",
+            "memberId": "lenguyenbinhphuong@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "phamthiviettrinh@vus-etsc.edu.vn",
+            "memberId": "phamthiviettrinh@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "buithikimanh@vus-etsc.edu.vn",
+            "memberId": "buithikimanh@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "duyenntm@vus-etsc.edu.vn",
+            "memberId": "duyenntm@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           },
           {
             "memberName": "thuyvi.nguyen@vus-etsc.edu.vn",
+            "memberId": "thuyvi.nguyen@vus-etsc.edu.vn",
+            "identityProvider": "AzureAD"
+          },
+          {
+            "memberName": "dntruonggiang@vus-etsc.edu.vn",
+            "memberId": "dntruonggiang@vus-etsc.edu.vn",
+            "identityProvider": "AzureAD"
+          },
+          {
+            "memberName": "hathaiquangminh@vus-etsc.edu.vn",
+            "memberId": "hathaiquangminh@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           }
         ],
