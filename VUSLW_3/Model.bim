@@ -79718,6 +79718,11 @@
             "memberName": "hathaiquangminh@vus-etsc.edu.vn",
             "memberId": "hathaiquangminh@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
+          },
+          {
+            "memberName": "nguyenhuuhien@vus-etsc.edu.vn",
+            "memberId": "nguyenhuuhien@vus-etsc.edu.vn",
+            "identityProvider": "AzureAD"
           }
         ],
         "tablePermissions": [
