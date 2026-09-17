@@ -20,7 +20,7 @@
           "AuthenticationKind": "OAuth2",
           "kind": "SQL",
           "path": "yvpqbupzx7kufapfd474wcexte-5bh5o7llmmnuta22i6u45pycty.datawarehouse.fabric.microsoft.com;VUSDWHPRO",
-          "Expires": "Wed, 09 Sep 2026 05:45:34 GMT"
+          "Expires": "Wed, 16 Sep 2026 08:40:24 GMT"
         }
       }
     ],
@@ -28733,6 +28733,11 @@
             "name": "OrderType",
             "dataType": "string",
             "sourceColumn": "OrderType"
+          },
+          {
+            "name": "Recruiter",
+            "dataType": "string",
+            "sourceColumn": "Recruiter"
           }
         ],
         "partitions": [
@@ -49084,6 +49089,9 @@
               },
               {
                 "name": "OrderType"
+              },
+              {
+                "name": "Recruiter"
               }
             ],
             "measures": [
