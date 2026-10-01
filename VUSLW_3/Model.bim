@@ -13247,6 +13247,11 @@
               ""
             ],
             "formatString": "#,0"
+          },
+          {
+            "name": "# of Gap New Recycle vs Target",
+            "expression": "[# of New Enrol PD target recycle] - [# 1 of New Student PD Recycle]",
+            "formatString": "#,0"
           }
         ]
       },
@@ -20281,6 +20286,45 @@
               ""
             ],
             "formatString": "0%;-0%;0%"
+          },
+          {
+            "name": "# Of KK",
+            "expression": [
+              " [# of KKHT] + [# of KKCT]",
+              "",
+              ""
+            ],
+            "formatString": "#,0"
+          },
+          {
+            "name": "# Of Class KK",
+            "expression": [
+              " ",
+              "CALCULATE(",
+              "    DISTINCTCOUNT('ASA Push Sale'[Old Class Code]),",
+              "    FILTER(",
+              "        VALUES('ASA Push Sale'[Old class Code]),",
+              "        [# Of KK] > 0",
+              "    )",
+              ")"
+            ],
+            "formatString": "#,0"
+          },
+          {
+            "name": "# Of Lead Called/1 Sign Recycle",
+            "expression": [
+              " DIVIDE(",
+              "    [# total_lead_recycle_called],",
+              "    [# 1 of New Student PD Recycle],",
+              "    0",
+              ")"
+            ],
+            "formatString": "#,0"
+          },
+          {
+            "name": "# of Additional Calls Needed for Target",
+            "expression": " [# Of Lead Called/1 Sign Recycle] * [# of Gap New Recycle vs Target]",
+            "formatString": "#,0"
           }
         ]
       },
@@ -29909,7 +29953,7 @@
           },
           {
             "name": "# Retention OD Target",
-            "expression": " CALCULATE( SUM('ASA Target Manual'[Target Value]), 'ASA Target Manual'[Target Type] = \"Target Retention OD\")"
+            "expression": " CALCULATE( AVERAGE('ASA Target Manual'[Target Value]), 'ASA Target Manual'[Target Type] = \"Target Retention OD\")"
           },
           {
             "name": "% Retention vs Target",
@@ -46315,6 +46359,12 @@
               },
               {
                 "name": "# of Gap Total New"
+              },
+              {
+                "name": "# of Gap New Recycle vs Target"
+              },
+              {
+                "name": "of # Gap Ref/Sib New"
               }
             ]
           },
@@ -48296,6 +48346,18 @@
               },
               {
                 "name": "% KKHT + TN TGD"
+              },
+              {
+                "name": "# Of Class KK"
+              },
+              {
+                "name": "# Of KK"
+              },
+              {
+                "name": "# of Additional Calls Needed for Target"
+              },
+              {
+                "name": "# Of Lead Called/1 Sign Recycle"
               }
             ]
           },
@@ -55583,6 +55645,12 @@
               },
               {
                 "name": "# of Gap Total New"
+              },
+              {
+                "name": "# of Gap New Recycle vs Target"
+              },
+              {
+                "name": "of # Gap Ref/Sib New"
               }
             ]
           },
@@ -58404,6 +58472,18 @@
               },
               {
                 "name": "% KKHT + TN TGD"
+              },
+              {
+                "name": "# Of Class KK"
+              },
+              {
+                "name": "# Of KK"
+              },
+              {
+                "name": "# of Additional Calls Needed for Target"
+              },
+              {
+                "name": "# Of Lead Called/1 Sign Recycle"
               }
             ]
           },
@@ -63811,6 +63891,12 @@
               },
               {
                 "name": "# of Gap Total New"
+              },
+              {
+                "name": "# of Gap New Recycle vs Target"
+              },
+              {
+                "name": "of # Gap Ref/Sib New"
               }
             ]
           },
@@ -66956,6 +67042,18 @@
               },
               {
                 "name": "% KKHT + TN TGD"
+              },
+              {
+                "name": "# Of Class KK"
+              },
+              {
+                "name": "# Of KK"
+              },
+              {
+                "name": "# of Additional Calls Needed for Target"
+              },
+              {
+                "name": "# Of Lead Called/1 Sign Recycle"
               }
             ]
           },
@@ -71943,6 +72041,18 @@
               },
               {
                 "name": "# of Gap Total New"
+              },
+              {
+                "name": "# of Gap New Recycle vs Target"
+              },
+              {
+                "name": "New Enrol PD Revenue Tuition Amt"
+              },
+              {
+                "name": "of # Gap Ref/Sib New"
+              },
+              {
+                "name": "Re Enrol PD Revenue Tuition Amt"
               }
             ]
           },
@@ -76925,6 +77035,18 @@
               },
               {
                 "name": "% KKHT + TN TGD"
+              },
+              {
+                "name": "# Of Class KK"
+              },
+              {
+                "name": "# Of KK"
+              },
+              {
+                "name": "# of Additional Calls Needed for Target"
+              },
+              {
+                "name": "# Of Lead Called/1 Sign Recycle"
               }
             ]
           },
