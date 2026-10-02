@@ -20,7 +20,7 @@
           "AuthenticationKind": "OAuth2",
           "kind": "SQL",
           "path": "yvpqbupzx7kufapfd474wcexte-5bh5o7llmmnuta22i6u45pycty.datawarehouse.fabric.microsoft.com;VUSDWHPRO",
-          "Expires": "Wed, 16 Sep 2026 08:40:24 GMT"
+          "Expires": "Fri, 02 Oct 2026 04:00:46 GMT"
         }
       }
     ],
@@ -31478,35 +31478,6 @@
         ]
       },
       {
-        "name": "AdjustValue",
-        "columns": [
-          {
-            "type": "calculatedTableColumn",
-            "name": "IsAdjusted",
-            "dataType": "int64",
-            "isNameInferred": true,
-            "isDataTypeInferred": true,
-            "sourceColumn": "[IsAdjusted]"
-          }
-        ],
-        "partitions": [
-          {
-            "name": "CalculatedTable 1",
-            "source": {
-              "type": "calculated",
-              "expression": [
-                "DATATABLE(",
-                "    \"IsAdjusted\", INTEGER,",
-                "    {",
-                "        {0},{1}",
-                "    }",
-                ")"
-              ]
-            }
-          }
-        ]
-      },
-      {
         "name": "Teacher Substitution Request",
         "columns": [
           {
@@ -32604,14 +32575,9 @@
             "sourceColumn": "FullYear Actual Student"
           },
           {
-            "name": "Fabric_Test_Column",
-            "dataType": "string",
-            "sourceColumn": "Fabric_Test_Column"
-          },
-          {
-            "name": "Fabric_Test_Column_2",
-            "dataType": "string",
-            "sourceColumn": "Fabric_Test_Column_2"
+            "name": "Real Time Actual Student",
+            "dataType": "int64",
+            "sourceColumn": "Real Time Actual Student"
           }
         ],
         "partitions": [
@@ -33392,6 +33358,40 @@
               ")",
               ", BLANK()",
               ") "
+            ]
+          },
+          {
+            "name": "# of Forecast Active Student",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    SUMX(",
+              "        SUMMARIZE(",
+              "            'Budget Management',",
+              "            'Budget Management'[CampusCode],",
+              "            'Budget Management'[MonthYear]",
+              "        ),",
+              "        CALCULATE( MAX('Budget Management'[Budget ActiveStudent]))",
+              "    ),",
+              "    REMOVEFILTERS('Budget Management'[Department]), NOT('Budget Management'[CampusCode] IN \t{\"NWE_VPTT\", \"HCM_VPTT\", \"EDU_VPTT\"})",
+              ")"
+            ]
+          },
+          {
+            "name": "# of Real Time Actual Student",
+            "expression": [
+              "",
+              "CALCULATE(",
+              "    SUMX(",
+              "        SUMMARIZE(",
+              "            'Budget Management',",
+              "            'Budget Management'[CampusCode],",
+              "            'Budget Management'[MonthYear]",
+              "        ),",
+              "        CALCULATE( MAX('Budget Management'[Real Time Actual Student]))",
+              "    ),",
+              "    REMOVEFILTERS('Budget Management'[Department]), NOT('Budget Management'[CampusCode] IN \t{\"NWE_VPTT\", \"HCM_VPTT\", \"EDU_VPTT\"})",
+              ")"
             ]
           }
         ]
@@ -36866,6 +36866,35 @@
             "name": "% Actual Expensive (Monthly)",
             "expression": " DIVIDE([# of PO Gross Amount], [# of Monthly Sourcing Budget (Active Student)],0)",
             "formatString": "0.00%;-0.00%;0.00%"
+          }
+        ]
+      },
+      {
+        "name": "AdjustValue",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "IsAdjusted",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[IsAdjusted]"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "CalculatedTable 1",
+            "source": {
+              "type": "calculated",
+              "expression": [
+                "DATATABLE(",
+                "    \"IsAdjusted\", INTEGER,",
+                "    {",
+                "        {0},{1}",
+                "    }",
+                ")"
+              ]
+            }
           }
         ]
       }
@@ -49948,14 +49977,6 @@
             ]
           },
           {
-            "name": "AdjustValue",
-            "columns": [
-              {
-                "name": "IsAdjusted"
-              }
-            ]
-          },
-          {
             "name": "Teacher Substitution Request",
             "columns": [
               {
@@ -50443,10 +50464,7 @@
                 "name": "FullYear Actual Student"
               },
               {
-                "name": "Fabric_Test_Column"
-              },
-              {
-                "name": "Fabric_Test_Column_2"
+                "name": "Real Time Actual Student"
               }
             ],
             "measures": [
@@ -50617,6 +50635,12 @@
               },
               {
                 "name": "% of Actual / Budget Student"
+              },
+              {
+                "name": "# of Forecast Active Student"
+              },
+              {
+                "name": "# of Real Time Actual Student"
               }
             ]
           },
@@ -51996,6 +52020,14 @@
               },
               {
                 "name": "% Actual Expensive (Monthly)"
+              }
+            ]
+          },
+          {
+            "name": "AdjustValue",
+            "columns": [
+              {
+                "name": "IsAdjusted"
               }
             ]
           }
@@ -62210,7 +62242,255 @@
             "name": "Budget Management",
             "columns": [
               {
-                "name": "Fabric_Test_Column"
+                "name": "% Actual Expense"
+              },
+              {
+                "name": "% Budget Remaining"
+              },
+              {
+                "name": "Account"
+              },
+              {
+                "name": "Actual ActiveStudent"
+              },
+              {
+                "name": "Actual Expense"
+              },
+              {
+                "name": "Budget (Active student)"
+              },
+              {
+                "name": "Budget ActiveStudent"
+              },
+              {
+                "name": "Budget Approved"
+              },
+              {
+                "name": "Budget Remaining"
+              },
+              {
+                "name": "BudgetCode"
+              },
+              {
+                "name": "CampusCode"
+              },
+              {
+                "name": "CampusKey"
+              },
+              {
+                "name": "Code"
+              },
+              {
+                "name": "DateKey"
+              },
+              {
+                "name": "Department"
+              },
+              {
+                "name": "FullYear Actual Expense"
+              },
+              {
+                "name": "FullYear Actual Student"
+              },
+              {
+                "name": "GroupItem"
+              },
+              {
+                "name": "Item"
+              },
+              {
+                "name": "LedgerAccount"
+              },
+              {
+                "name": "MonthYear"
+              },
+              {
+                "name": "Owner"
+              },
+              {
+                "name": "RateAdjust"
+              },
+              {
+                "name": "Real Time Actual Student"
+              },
+              {
+                "name": "SubTeam"
+              }
+            ],
+            "measures": [
+              {
+                "name": "# of Actual Active Student"
+              },
+              {
+                "name": "# of Actual ActiveStudent Fin"
+              },
+              {
+                "name": "# of Actual Expense"
+              },
+              {
+                "name": "# of Actual Expense (Non-Lương)"
+              },
+              {
+                "name": "# of Actual Expense Full Dept"
+              },
+              {
+                "name": "# of Budget (Active student)"
+              },
+              {
+                "name": "# of Budget (Active student) (Non-Lương)"
+              },
+              {
+                "name": "# of Budget Approved"
+              },
+              {
+                "name": "# of Budget Approved (Non-Lương)"
+              },
+              {
+                "name": "# of Budget Remaining"
+              },
+              {
+                "name": "# of Budget Remaining (Non-Lương)"
+              },
+              {
+                "name": "# of Forecast Active Student"
+              },
+              {
+                "name": "# of Full Year Academic"
+              },
+              {
+                "name": "# of Full Year Actual Expense (Non-Lương)"
+              },
+              {
+                "name": "# of Full Year Actual Expense Full Dept"
+              },
+              {
+                "name": "# of Full Year Actual Student"
+              },
+              {
+                "name": "# of Full Year Budget (Active Student)"
+              },
+              {
+                "name": "# of Full Year Budget (Active Student) (Non-Lương)"
+              },
+              {
+                "name": "# of Full Year Budget Approved (Non-Lương)"
+              },
+              {
+                "name": "# of Full Year Budget Remaining (Non-Lương)"
+              },
+              {
+                "name": "# of Full Year Cost Per Student"
+              },
+              {
+                "name": "# of Full Year Actual Expense"
+              },
+              {
+                "name": "# of Full Year Budget Approved"
+              },
+              {
+                "name": "# of Full Year Budget Remaining"
+              },
+              {
+                "name": "# of Full Year FullYear Actual Expense"
+              },
+              {
+                "name": "# of Full Year FullYear Actual Student"
+              },
+              {
+                "name": "# of FullYear Actual Expense"
+              },
+              {
+                "name": "# of FullYear Actual Student"
+              },
+              {
+                "name": "# of Prev Year YTD Actual ActiveStudent Fin"
+              },
+              {
+                "name": "# of Prev Year YTD Actual Expense"
+              },
+              {
+                "name": "# of Prev Year YTD Budget (Active student)"
+              },
+              {
+                "name": "# of Prev Year YTD Budget Approved"
+              },
+              {
+                "name": "# of Real Time Actual Student"
+              },
+              {
+                "name": "# of YTD Academic"
+              },
+              {
+                "name": "# of YTD Actual Active Student"
+              },
+              {
+                "name": "# of YTD Actual ActiveStudent Fin"
+              },
+              {
+                "name": "# of YTD Actual Expense"
+              },
+              {
+                "name": "# of YTD Actual Expense (Non-Lương)"
+              },
+              {
+                "name": "# of YTD Actual Expense Full Dept"
+              },
+              {
+                "name": "# of YTD Actual Expense Var"
+              },
+              {
+                "name": "# of YTD Budget (Active student)"
+              },
+              {
+                "name": "# of YTD Budget (Active student) (Non-Lương)"
+              },
+              {
+                "name": "# of YTD Budget (Active student) Var"
+              },
+              {
+                "name": "# of YTD Budget Approved"
+              },
+              {
+                "name": "# of YTD Budget Approved (Non-Lương)"
+              },
+              {
+                "name": "# of YTD Budget Remaining"
+              },
+              {
+                "name": "# of YTD Budget Remaining (Non-Lương)"
+              },
+              {
+                "name": "# of YTD Cost Per Student"
+              },
+              {
+                "name": "% of Actual / Budget Student"
+              },
+              {
+                "name": "% of Actual Expense"
+              },
+              {
+                "name": "% of Actual Expense (Non-Lương)"
+              },
+              {
+                "name": "% of Full Year Actual Expense"
+              },
+              {
+                "name": "% of Full Year Actual Expense (Non-Lương)"
+              },
+              {
+                "name": "% of YTD Actual Expense"
+              },
+              {
+                "name": "% of YTD Actual Expense (Non-Lương)"
+              },
+              {
+                "name": "% YTD Actual ActiveStudent Fin Var"
+              },
+              {
+                "name": "% YTD Actual Expense label"
+              },
+              {
+                "name": "% YTD Budget Approved Var"
               }
             ]
           }
@@ -69271,7 +69551,255 @@
             "name": "Budget Management",
             "columns": [
               {
-                "name": "Fabric_Test_Column"
+                "name": "% Actual Expense"
+              },
+              {
+                "name": "% Budget Remaining"
+              },
+              {
+                "name": "Account"
+              },
+              {
+                "name": "Actual ActiveStudent"
+              },
+              {
+                "name": "Actual Expense"
+              },
+              {
+                "name": "Budget (Active student)"
+              },
+              {
+                "name": "Budget ActiveStudent"
+              },
+              {
+                "name": "Budget Approved"
+              },
+              {
+                "name": "Budget Remaining"
+              },
+              {
+                "name": "BudgetCode"
+              },
+              {
+                "name": "CampusCode"
+              },
+              {
+                "name": "CampusKey"
+              },
+              {
+                "name": "Code"
+              },
+              {
+                "name": "DateKey"
+              },
+              {
+                "name": "Department"
+              },
+              {
+                "name": "FullYear Actual Expense"
+              },
+              {
+                "name": "FullYear Actual Student"
+              },
+              {
+                "name": "GroupItem"
+              },
+              {
+                "name": "Item"
+              },
+              {
+                "name": "LedgerAccount"
+              },
+              {
+                "name": "MonthYear"
+              },
+              {
+                "name": "Owner"
+              },
+              {
+                "name": "RateAdjust"
+              },
+              {
+                "name": "Real Time Actual Student"
+              },
+              {
+                "name": "SubTeam"
+              }
+            ],
+            "measures": [
+              {
+                "name": "# of Actual Active Student"
+              },
+              {
+                "name": "# of Actual ActiveStudent Fin"
+              },
+              {
+                "name": "# of Actual Expense"
+              },
+              {
+                "name": "# of Actual Expense (Non-Lương)"
+              },
+              {
+                "name": "# of Actual Expense Full Dept"
+              },
+              {
+                "name": "# of Budget (Active student)"
+              },
+              {
+                "name": "# of Budget (Active student) (Non-Lương)"
+              },
+              {
+                "name": "# of Budget Approved"
+              },
+              {
+                "name": "# of Budget Approved (Non-Lương)"
+              },
+              {
+                "name": "# of Budget Remaining"
+              },
+              {
+                "name": "# of Budget Remaining (Non-Lương)"
+              },
+              {
+                "name": "# of Forecast Active Student"
+              },
+              {
+                "name": "# of Full Year Academic"
+              },
+              {
+                "name": "# of Full Year Actual Expense (Non-Lương)"
+              },
+              {
+                "name": "# of Full Year Actual Expense Full Dept"
+              },
+              {
+                "name": "# of Full Year Actual Student"
+              },
+              {
+                "name": "# of Full Year Budget (Active Student)"
+              },
+              {
+                "name": "# of Full Year Budget (Active Student) (Non-Lương)"
+              },
+              {
+                "name": "# of Full Year Budget Approved (Non-Lương)"
+              },
+              {
+                "name": "# of Full Year Budget Remaining (Non-Lương)"
+              },
+              {
+                "name": "# of Full Year Cost Per Student"
+              },
+              {
+                "name": "# of Full Year Actual Expense"
+              },
+              {
+                "name": "# of Full Year Budget Approved"
+              },
+              {
+                "name": "# of Full Year Budget Remaining"
+              },
+              {
+                "name": "# of Full Year FullYear Actual Expense"
+              },
+              {
+                "name": "# of Full Year FullYear Actual Student"
+              },
+              {
+                "name": "# of FullYear Actual Expense"
+              },
+              {
+                "name": "# of FullYear Actual Student"
+              },
+              {
+                "name": "# of Prev Year YTD Actual ActiveStudent Fin"
+              },
+              {
+                "name": "# of Prev Year YTD Actual Expense"
+              },
+              {
+                "name": "# of Prev Year YTD Budget (Active student)"
+              },
+              {
+                "name": "# of Prev Year YTD Budget Approved"
+              },
+              {
+                "name": "# of Real Time Actual Student"
+              },
+              {
+                "name": "# of YTD Academic"
+              },
+              {
+                "name": "# of YTD Actual Active Student"
+              },
+              {
+                "name": "# of YTD Actual ActiveStudent Fin"
+              },
+              {
+                "name": "# of YTD Actual Expense"
+              },
+              {
+                "name": "# of YTD Actual Expense (Non-Lương)"
+              },
+              {
+                "name": "# of YTD Actual Expense Full Dept"
+              },
+              {
+                "name": "# of YTD Actual Expense Var"
+              },
+              {
+                "name": "# of YTD Budget (Active student)"
+              },
+              {
+                "name": "# of YTD Budget (Active student) (Non-Lương)"
+              },
+              {
+                "name": "# of YTD Budget (Active student) Var"
+              },
+              {
+                "name": "# of YTD Budget Approved"
+              },
+              {
+                "name": "# of YTD Budget Approved (Non-Lương)"
+              },
+              {
+                "name": "# of YTD Budget Remaining"
+              },
+              {
+                "name": "# of YTD Budget Remaining (Non-Lương)"
+              },
+              {
+                "name": "# of YTD Cost Per Student"
+              },
+              {
+                "name": "% of Actual / Budget Student"
+              },
+              {
+                "name": "% of Actual Expense"
+              },
+              {
+                "name": "% of Actual Expense (Non-Lương)"
+              },
+              {
+                "name": "% of Full Year Actual Expense"
+              },
+              {
+                "name": "% of Full Year Actual Expense (Non-Lương)"
+              },
+              {
+                "name": "% of YTD Actual Expense"
+              },
+              {
+                "name": "% of YTD Actual Expense (Non-Lương)"
+              },
+              {
+                "name": "% YTD Actual ActiveStudent Fin Var"
+              },
+              {
+                "name": "% YTD Actual Expense label"
+              },
+              {
+                "name": "% YTD Budget Approved Var"
               }
             ]
           }
@@ -78317,7 +78845,255 @@
             "name": "Budget Management",
             "columns": [
               {
-                "name": "Fabric_Test_Column"
+                "name": "% Actual Expense"
+              },
+              {
+                "name": "% Budget Remaining"
+              },
+              {
+                "name": "Account"
+              },
+              {
+                "name": "Actual ActiveStudent"
+              },
+              {
+                "name": "Actual Expense"
+              },
+              {
+                "name": "Budget (Active student)"
+              },
+              {
+                "name": "Budget ActiveStudent"
+              },
+              {
+                "name": "Budget Approved"
+              },
+              {
+                "name": "Budget Remaining"
+              },
+              {
+                "name": "BudgetCode"
+              },
+              {
+                "name": "CampusCode"
+              },
+              {
+                "name": "CampusKey"
+              },
+              {
+                "name": "Code"
+              },
+              {
+                "name": "DateKey"
+              },
+              {
+                "name": "Department"
+              },
+              {
+                "name": "FullYear Actual Expense"
+              },
+              {
+                "name": "FullYear Actual Student"
+              },
+              {
+                "name": "GroupItem"
+              },
+              {
+                "name": "Item"
+              },
+              {
+                "name": "LedgerAccount"
+              },
+              {
+                "name": "MonthYear"
+              },
+              {
+                "name": "Owner"
+              },
+              {
+                "name": "RateAdjust"
+              },
+              {
+                "name": "Real Time Actual Student"
+              },
+              {
+                "name": "SubTeam"
+              }
+            ],
+            "measures": [
+              {
+                "name": "# of Actual Active Student"
+              },
+              {
+                "name": "# of Actual ActiveStudent Fin"
+              },
+              {
+                "name": "# of Actual Expense"
+              },
+              {
+                "name": "# of Actual Expense (Non-Lương)"
+              },
+              {
+                "name": "# of Actual Expense Full Dept"
+              },
+              {
+                "name": "# of Budget (Active student)"
+              },
+              {
+                "name": "# of Budget (Active student) (Non-Lương)"
+              },
+              {
+                "name": "# of Budget Approved"
+              },
+              {
+                "name": "# of Budget Approved (Non-Lương)"
+              },
+              {
+                "name": "# of Budget Remaining"
+              },
+              {
+                "name": "# of Budget Remaining (Non-Lương)"
+              },
+              {
+                "name": "# of Forecast Active Student"
+              },
+              {
+                "name": "# of Full Year Academic"
+              },
+              {
+                "name": "# of Full Year Actual Expense (Non-Lương)"
+              },
+              {
+                "name": "# of Full Year Actual Expense Full Dept"
+              },
+              {
+                "name": "# of Full Year Actual Student"
+              },
+              {
+                "name": "# of Full Year Budget (Active Student)"
+              },
+              {
+                "name": "# of Full Year Budget (Active Student) (Non-Lương)"
+              },
+              {
+                "name": "# of Full Year Budget Approved (Non-Lương)"
+              },
+              {
+                "name": "# of Full Year Budget Remaining (Non-Lương)"
+              },
+              {
+                "name": "# of Full Year Cost Per Student"
+              },
+              {
+                "name": "# of Full Year Actual Expense"
+              },
+              {
+                "name": "# of Full Year Budget Approved"
+              },
+              {
+                "name": "# of Full Year Budget Remaining"
+              },
+              {
+                "name": "# of Full Year FullYear Actual Expense"
+              },
+              {
+                "name": "# of Full Year FullYear Actual Student"
+              },
+              {
+                "name": "# of FullYear Actual Expense"
+              },
+              {
+                "name": "# of FullYear Actual Student"
+              },
+              {
+                "name": "# of Prev Year YTD Actual ActiveStudent Fin"
+              },
+              {
+                "name": "# of Prev Year YTD Actual Expense"
+              },
+              {
+                "name": "# of Prev Year YTD Budget (Active student)"
+              },
+              {
+                "name": "# of Prev Year YTD Budget Approved"
+              },
+              {
+                "name": "# of Real Time Actual Student"
+              },
+              {
+                "name": "# of YTD Academic"
+              },
+              {
+                "name": "# of YTD Actual Active Student"
+              },
+              {
+                "name": "# of YTD Actual ActiveStudent Fin"
+              },
+              {
+                "name": "# of YTD Actual Expense"
+              },
+              {
+                "name": "# of YTD Actual Expense (Non-Lương)"
+              },
+              {
+                "name": "# of YTD Actual Expense Full Dept"
+              },
+              {
+                "name": "# of YTD Actual Expense Var"
+              },
+              {
+                "name": "# of YTD Budget (Active student)"
+              },
+              {
+                "name": "# of YTD Budget (Active student) (Non-Lương)"
+              },
+              {
+                "name": "# of YTD Budget (Active student) Var"
+              },
+              {
+                "name": "# of YTD Budget Approved"
+              },
+              {
+                "name": "# of YTD Budget Approved (Non-Lương)"
+              },
+              {
+                "name": "# of YTD Budget Remaining"
+              },
+              {
+                "name": "# of YTD Budget Remaining (Non-Lương)"
+              },
+              {
+                "name": "# of YTD Cost Per Student"
+              },
+              {
+                "name": "% of Actual / Budget Student"
+              },
+              {
+                "name": "% of Actual Expense"
+              },
+              {
+                "name": "% of Actual Expense (Non-Lương)"
+              },
+              {
+                "name": "% of Full Year Actual Expense"
+              },
+              {
+                "name": "% of Full Year Actual Expense (Non-Lương)"
+              },
+              {
+                "name": "% of YTD Actual Expense"
+              },
+              {
+                "name": "% of YTD Actual Expense (Non-Lương)"
+              },
+              {
+                "name": "% YTD Actual ActiveStudent Fin Var"
+              },
+              {
+                "name": "% YTD Actual Expense label"
+              },
+              {
+                "name": "% YTD Budget Approved Var"
               }
             ]
           }
@@ -79857,6 +80633,16 @@
           {
             "memberName": "nhi.nty@vus-etsc.edu.vn",
             "memberId": "nhi.nty@vus-etsc.edu.vn",
+            "identityProvider": "AzureAD"
+          },
+          {
+            "memberName": "nguyenquequyen@vus-etsc.edu.vn",
+            "memberId": "nguyenquequyen@vus-etsc.edu.vn",
+            "identityProvider": "AzureAD"
+          },
+          {
+            "memberName": "hoquangduongdoan@vus-etsc.edu.vn",
+            "memberId": "hoquangduongdoan@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           }
         ],
