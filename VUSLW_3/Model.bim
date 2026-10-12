@@ -20,7 +20,7 @@
           "AuthenticationKind": "OAuth2",
           "kind": "SQL",
           "path": "yvpqbupzx7kufapfd474wcexte-5bh5o7llmmnuta22i6u45pycty.datawarehouse.fabric.microsoft.com;VUSDWHPRO",
-          "Expires": "Fri, 02 Oct 2026 04:00:46 GMT"
+          "Expires": "Mon, 12 Oct 2026 10:11:22 GMT"
         }
       }
     ],
@@ -10284,6 +10284,11 @@
             "name": "score_category",
             "dataType": "string",
             "sourceColumn": "score_category"
+          },
+          {
+            "name": "PaymentRule",
+            "dataType": "string",
+            "sourceColumn": "PaymentRule"
           }
         ],
         "partitions": [
@@ -45015,6 +45020,9 @@
               },
               {
                 "name": "score_category"
+              },
+              {
+                "name": "PaymentRule"
               }
             ],
             "measures": [
@@ -54304,6 +54312,9 @@
               },
               {
                 "name": "score_category"
+              },
+              {
+                "name": "PaymentRule"
               }
             ],
             "measures": [
@@ -62798,6 +62809,9 @@
               },
               {
                 "name": "score_category"
+              },
+              {
+                "name": "PaymentRule"
               }
             ],
             "measures": [
@@ -71202,6 +71216,9 @@
               },
               {
                 "name": "Use Wallet"
+              },
+              {
+                "name": "PaymentRule"
               }
             ],
             "measures": [
