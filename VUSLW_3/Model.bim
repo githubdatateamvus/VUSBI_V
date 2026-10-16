@@ -20,7 +20,7 @@
           "AuthenticationKind": "OAuth2",
           "kind": "SQL",
           "path": "yvpqbupzx7kufapfd474wcexte-5bh5o7llmmnuta22i6u45pycty.datawarehouse.fabric.microsoft.com;VUSDWHPRO",
-          "Expires": "Mon, 12 Oct 2026 10:11:22 GMT"
+          "Expires": "Fri, 16 Oct 2026 07:37:17 GMT"
         }
       }
     ],
@@ -10181,18 +10181,6 @@
             "displayFolder": "Attribute"
           },
           {
-            "name": "Remain Money Flag",
-            "dataType": "string",
-            "sourceColumn": "Remain Money Flag",
-            "displayFolder": "Attribute"
-          },
-          {
-            "name": "No Money Previous Month Flag",
-            "dataType": "string",
-            "sourceColumn": "No Money Previous Month Flag",
-            "displayFolder": "Attribute"
-          },
-          {
             "name": "First Date Of Study",
             "dataType": "dateTime",
             "sourceColumn": "First Date Of Study"
@@ -10226,16 +10214,6 @@
             "name": "Subject Code",
             "dataType": "string",
             "sourceColumn": "Subject Code"
-          },
-          {
-            "name": "ReEnrol In Month Flag",
-            "dataType": "string",
-            "sourceColumn": "ReEnrol In Month Flag"
-          },
-          {
-            "name": "ReEnrol ED Previous Month Flag",
-            "dataType": "string",
-            "sourceColumn": "ReEnrol ED Previous Month Flag"
           },
           {
             "type": "calculated",
@@ -44869,9 +44847,6 @@
                 "name": "New Enrol Flag"
               },
               {
-                "name": "No Money Previous Month Flag"
-              },
-              {
                 "name": "Note"
               },
               {
@@ -44909,15 +44884,6 @@
               },
               {
                 "name": "Real Total"
-              },
-              {
-                "name": "ReEnrol ED Previous Month Flag"
-              },
-              {
-                "name": "ReEnrol In Month Flag"
-              },
-              {
-                "name": "Remain Money Flag"
               },
               {
                 "name": "SAM MONTH"
@@ -54263,12 +54229,6 @@
                 "name": "Invoice Type Key"
               },
               {
-                "name": "No Money Previous Month Flag"
-              },
-              {
-                "name": "Remain Money Flag"
-              },
-              {
                 "name": "First Date Of Study"
               },
               {
@@ -54285,12 +54245,6 @@
               },
               {
                 "name": "Subject Key"
-              },
-              {
-                "name": "ReEnrol ED Previous Month Flag"
-              },
-              {
-                "name": "ReEnrol In Month Flag"
               },
               {
                 "name": "Showdate equal Signdate"
@@ -62760,12 +62714,6 @@
                 "name": "Invoice Type Key"
               },
               {
-                "name": "No Money Previous Month Flag"
-              },
-              {
-                "name": "Remain Money Flag"
-              },
-              {
                 "name": "First Date Of Study"
               },
               {
@@ -62782,12 +62730,6 @@
               },
               {
                 "name": "Subject Key"
-              },
-              {
-                "name": "ReEnrol ED Previous Month Flag"
-              },
-              {
-                "name": "ReEnrol In Month Flag"
               },
               {
                 "name": "ShowMonth equal SignMonth"
@@ -71155,12 +71097,6 @@
                 "name": "Lead Key"
               },
               {
-                "name": "Remain Money Flag"
-              },
-              {
-                "name": "No Money Previous Month Flag"
-              },
-              {
                 "name": "Invoice Type Key"
               },
               {
@@ -71176,16 +71112,10 @@
                 "name": "Waiting Day"
               },
               {
-                "name": "ReEnrol ED Previous Month Flag"
-              },
-              {
                 "name": "ShowMonth equal SignMonth"
               },
               {
                 "name": "First Date Of Study"
-              },
-              {
-                "name": "ReEnrol In Month Flag"
               },
               {
                 "name": "SAME PD-OD"
