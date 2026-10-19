@@ -20,7 +20,7 @@
           "AuthenticationKind": "OAuth2",
           "kind": "SQL",
           "path": "yvpqbupzx7kufapfd474wcexte-5bh5o7llmmnuta22i6u45pycty.datawarehouse.fabric.microsoft.com;VUSDWHPRO",
-          "Expires": "Fri, 16 Oct 2026 07:37:17 GMT"
+          "Expires": "Mon, 19 Oct 2026 05:11:02 GMT"
         }
       }
     ],
@@ -14372,6 +14372,11 @@
             "name": "Owner By",
             "dataType": "string",
             "sourceColumn": "OWNER_BY"
+          },
+          {
+            "name": "Owner Team",
+            "dataType": "string",
+            "sourceColumn": "OWNER_TEAM"
           }
         ],
         "partitions": [
@@ -52004,6 +52009,14 @@
                 "name": "IsAdjusted"
               }
             ]
+          },
+          {
+            "name": "Lead",
+            "columns": [
+              {
+                "name": "Owner Team"
+              }
+            ]
           }
         ]
       },
@@ -56127,6 +56140,9 @@
               },
               {
                 "name": "Study Objective"
+              },
+              {
+                "name": "Owner Team"
               }
             ],
             "measures": [
@@ -65605,6 +65621,9 @@
               },
               {
                 "name": "Study Objective"
+              },
+              {
+                "name": "Owner Team"
               }
             ],
             "measures": [
@@ -76557,6 +76576,9 @@
               },
               {
                 "name": "Study Objective"
+              },
+              {
+                "name": "Owner Team"
               }
             ],
             "measures": [
