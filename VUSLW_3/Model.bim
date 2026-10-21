@@ -20,7 +20,7 @@
           "AuthenticationKind": "OAuth2",
           "kind": "SQL",
           "path": "yvpqbupzx7kufapfd474wcexte-5bh5o7llmmnuta22i6u45pycty.datawarehouse.fabric.microsoft.com;VUSDWHPRO",
-          "Expires": "Mon, 19 Oct 2026 05:11:02 GMT"
+          "Expires": "Wed, 21 Oct 2026 08:10:42 GMT"
         }
       }
     ],
@@ -35780,51 +35780,6 @@
             "name": "response_time_seconds",
             "dataType": "int64",
             "sourceColumn": "response_time_seconds"
-          },
-          {
-            "name": "W_INTEGRATION_ID",
-            "dataType": "string",
-            "sourceColumn": "W_INTEGRATION_ID"
-          },
-          {
-            "name": "W_EFFECTIVE_FROM_DT",
-            "dataType": "dateTime",
-            "sourceColumn": "W_EFFECTIVE_FROM_DT"
-          },
-          {
-            "name": "W_EFFECTIVE_TO_DT",
-            "dataType": "dateTime",
-            "sourceColumn": "W_EFFECTIVE_TO_DT"
-          },
-          {
-            "name": "W_CURRENT_FLG",
-            "dataType": "string",
-            "sourceColumn": "W_CURRENT_FLG"
-          },
-          {
-            "name": "W_DELETE_FLG",
-            "dataType": "string",
-            "sourceColumn": "W_DELETE_FLG"
-          },
-          {
-            "name": "W_BATCH_ID",
-            "dataType": "int64",
-            "sourceColumn": "W_BATCH_ID"
-          },
-          {
-            "name": "W_INSERT_DT",
-            "dataType": "dateTime",
-            "sourceColumn": "W_INSERT_DT"
-          },
-          {
-            "name": "W_UPDATE_DT",
-            "dataType": "dateTime",
-            "sourceColumn": "W_UPDATE_DT"
-          },
-          {
-            "name": "W_DATASOURCE_NUM_ID",
-            "dataType": "int64",
-            "sourceColumn": "W_DATASOURCE_NUM_ID"
           }
         ],
         "partitions": [
@@ -51731,33 +51686,6 @@
               },
               {
                 "name": "user_id"
-              },
-              {
-                "name": "W_BATCH_ID"
-              },
-              {
-                "name": "W_CURRENT_FLG"
-              },
-              {
-                "name": "W_DATASOURCE_NUM_ID"
-              },
-              {
-                "name": "W_DELETE_FLG"
-              },
-              {
-                "name": "W_EFFECTIVE_FROM_DT"
-              },
-              {
-                "name": "W_EFFECTIVE_TO_DT"
-              },
-              {
-                "name": "W_INSERT_DT"
-              },
-              {
-                "name": "W_INTEGRATION_ID"
-              },
-              {
-                "name": "W_UPDATE_DT"
               }
             ],
             "measures": [
@@ -62067,33 +61995,6 @@
               },
               {
                 "name": "user_id"
-              },
-              {
-                "name": "W_BATCH_ID"
-              },
-              {
-                "name": "W_CURRENT_FLG"
-              },
-              {
-                "name": "W_DATASOURCE_NUM_ID"
-              },
-              {
-                "name": "W_DELETE_FLG"
-              },
-              {
-                "name": "W_EFFECTIVE_FROM_DT"
-              },
-              {
-                "name": "W_EFFECTIVE_TO_DT"
-              },
-              {
-                "name": "W_INSERT_DT"
-              },
-              {
-                "name": "W_INTEGRATION_ID"
-              },
-              {
-                "name": "W_UPDATE_DT"
               }
             ],
             "measures": [
@@ -69370,33 +69271,6 @@
               },
               {
                 "name": "user_id"
-              },
-              {
-                "name": "W_BATCH_ID"
-              },
-              {
-                "name": "W_CURRENT_FLG"
-              },
-              {
-                "name": "W_DATASOURCE_NUM_ID"
-              },
-              {
-                "name": "W_DELETE_FLG"
-              },
-              {
-                "name": "W_EFFECTIVE_FROM_DT"
-              },
-              {
-                "name": "W_EFFECTIVE_TO_DT"
-              },
-              {
-                "name": "W_INSERT_DT"
-              },
-              {
-                "name": "W_INTEGRATION_ID"
-              },
-              {
-                "name": "W_UPDATE_DT"
               }
             ],
             "measures": [
