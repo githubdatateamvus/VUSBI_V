@@ -31533,6 +31533,35 @@
         ]
       },
       {
+        "name": "AdjustValue",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "IsAdjusted",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[IsAdjusted]"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "CalculatedTable 1",
+            "source": {
+              "type": "calculated",
+              "expression": [
+                "DATATABLE(",
+                "    \"IsAdjusted\", INTEGER,",
+                "    {",
+                "        {0},{1}",
+                "    }",
+                ")"
+              ]
+            }
+          }
+        ]
+      },
+      {
         "name": "Teacher Substitution Request",
         "columns": [
           {
@@ -35368,7 +35397,7 @@
               "DIVIDE(",
               "    SUM('HRT Recruitment Cost'[PO_GrossAmount]),",
               "    'HRT Application'[# of Qualified CVs],",
-              "    0)"
+              "    0)+ 0"
             ],
             "formatString": "#,0"
           },
@@ -35470,7 +35499,7 @@
               "DIVIDE(",
               "    SUM('HRT Recruitment Cost'[PO_GrossAmount]),",
               "    'HRT Application'[# of Interviewed CVs],",
-              "    0)"
+              "    0)+ 0"
             ],
             "formatString": "#,0"
           },
@@ -35527,7 +35556,7 @@
               "DIVIDE(",
               "    SUM('HRT Recruitment Cost'[PO_GrossAmount]),",
               "    'HRT Application'[# of Offered CVs],",
-              "    0)"
+              "    0)+ 0"
             ],
             "formatString": "#,0"
           },
@@ -36876,35 +36905,6 @@
             "name": "% Actual Expensive (Monthly)",
             "expression": " DIVIDE([# of PO Gross Amount], [# of Monthly Sourcing Budget (Active Student)],0)",
             "formatString": "0.00%;-0.00%;0.00%"
-          }
-        ]
-      },
-      {
-        "name": "AdjustValue",
-        "columns": [
-          {
-            "type": "calculatedTableColumn",
-            "name": "IsAdjusted",
-            "dataType": "int64",
-            "isNameInferred": true,
-            "isDataTypeInferred": true,
-            "sourceColumn": "[IsAdjusted]"
-          }
-        ],
-        "partitions": [
-          {
-            "name": "CalculatedTable 1",
-            "source": {
-              "type": "calculated",
-              "expression": [
-                "DATATABLE(",
-                "    \"IsAdjusted\", INTEGER,",
-                "    {",
-                "        {0},{1}",
-                "    }",
-                ")"
-              ]
-            }
           }
         ]
       }
@@ -49978,6 +49978,14 @@
             ]
           },
           {
+            "name": "AdjustValue",
+            "columns": [
+              {
+                "name": "IsAdjusted"
+              }
+            ]
+          },
+          {
             "name": "Teacher Substitution Request",
             "columns": [
               {
@@ -51994,14 +52002,6 @@
               },
               {
                 "name": "% Actual Expensive (Monthly)"
-              }
-            ]
-          },
-          {
-            "name": "AdjustValue",
-            "columns": [
-              {
-                "name": "IsAdjusted"
               }
             ]
           },
