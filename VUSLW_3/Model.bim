@@ -35386,7 +35386,7 @@
               "SUMX(",
               "    'HRT Recruitment Cost',",
               "    COALESCE('HRT Recruitment Cost'[PO_GrossAmount], 0)",
-              ")"
+              ")+0"
             ],
             "formatString": "#,0"
           },
@@ -35408,7 +35408,7 @@
               "DIVIDE(",
               "    SUM('HRT Recruitment Cost'[PO_GrossAmount]),",
               "    'HRT Application'[# of Employed CVs],",
-              "    0)"
+              "    0)+0"
             ],
             "formatString": "#,0"
           },
