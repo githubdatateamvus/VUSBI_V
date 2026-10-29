@@ -28179,7 +28179,7 @@
               "CALCULATE(",
               "    DISTINCTCOUNT('HRT Application'[ApplicationRecId]),",
               "    KEEPFILTERS('HRT Application'[IsCVNonDup] = TRUE())",
-              ")"
+              ")+0"
             ],
             "formatString": "#,0"
           },
@@ -28190,7 +28190,7 @@
               "CALCULATE(",
               "    DISTINCTCOUNT('HRT Application'[ApplicationRecId]),",
               "    KEEPFILTERS('HRT Application'[IsEmployedCV] = TRUE())",
-              ")"
+              ")+0"
             ],
             "formatString": "#,0"
           },
@@ -28201,7 +28201,7 @@
               "CALCULATE(",
               "    DISTINCTCOUNT('HRT Application'[ApplicationRecId]),",
               "    KEEPFILTERS('HRT Application'[IsInterviewedCV] = TRUE())",
-              ")"
+              ")+0"
             ],
             "formatString": "#,0"
           },
@@ -28212,7 +28212,7 @@
               "CALCULATE(",
               "    DISTINCTCOUNT('HRT Application'[ApplicationRecId]),",
               "    KEEPFILTERS('HRT Application'[IsOfferedCV] = TRUE())",
-              ")"
+              ")+0"
             ],
             "formatString": "#,0"
           },
@@ -28223,7 +28223,7 @@
               "CALCULATE(",
               "    DISTINCTCOUNT('HRT Application'[ApplicationRecId]),",
               "    KEEPFILTERS('HRT Application'[IsPassedInterviewCV] = TRUE())",
-              ")"
+              ")+0"
             ],
             "formatString": "#,0"
           },
@@ -28234,7 +28234,7 @@
               "CALCULATE(",
               "    DISTINCTCOUNT('HRT Application'[ApplicationRecId]),",
               "    KEEPFILTERS('HRT Application'[IsQCV] = TRUE())",
-              ")"
+              ")+0"
             ],
             "formatString": "#,0"
           },
@@ -28342,7 +28342,7 @@
               "CALCULATE(",
               "    AVERAGE('HRT Application'[AplToHireDays]),",
               "    NOT ISBLANK('HRT Application'[AplToHireDays])",
-              ")"
+              ")+0"
             ],
             "formatString": "#,0"
           },
@@ -28352,7 +28352,7 @@
               "",
               "CALCULATE(",
               "    DISTINCTCOUNT('HRT Application'[ApplicationRecId]),",
-              "    'HRT Application'[IsRejectedCV] = TRUE())"
+              "    'HRT Application'[IsRejectedCV] = TRUE())+0"
             ],
             "formatString": "#,0"
           },
@@ -28367,7 +28367,7 @@
               "        'Calendar'[Date],",
               "        'HRT Application'[InterviewDate]",
               "    )",
-              ")"
+              ")+0"
             ],
             "formatString": "#,0"
           },
@@ -28382,7 +28382,7 @@
               "        'Calendar'[Date],",
               "        'HRT Application'[AssignDate]",
               "    )",
-              ")"
+              ")+0"
             ],
             "formatString": "#,0"
           },
@@ -28397,7 +28397,7 @@
               "        'Calendar'[Date],",
               "        'HRT Application'[OfferDate]",
               "    )",
-              ")"
+              ")+0"
             ],
             "formatString": "#,0"
           },
@@ -28410,7 +28410,7 @@
               "    KEEPFILTERS('HRT Application'[TestRanking] <> BLANK()),",
               "    KEEPFILTERS('HRT Application'[TeacherType] = \"TA\"),",
               "    KEEPFILTERS('HRT Application'[TestCode] <> BLANK())",
-              "    )"
+              "    )+0"
             ],
             "formatString": "#,0"
           },
@@ -28423,7 +28423,7 @@
               "    KEEPFILTERS('HRT Application'[TestRanking] = BLANK()),",
               "    KEEPFILTERS('HRT Application'[TeacherType] = \"TA\"),",
               "    KEEPFILTERS('HRT Application'[TestCode] <> BLANK())",
-              ")"
+              ")+0"
             ],
             "formatString": "#,0"
           },
@@ -28435,7 +28435,7 @@
               "    DISTINCTCOUNT('HRT Application'[ApplicationRecId]),",
               "    KEEPFILTERS('HRT Application'[TeacherType] = \"TA\"),",
               "    KEEPFILTERS('HRT Application'[TestCode] <> BLANK())",
-              ")"
+              ")+0"
             ],
             "formatString": "#,0"
           },
@@ -28446,7 +28446,7 @@
               "CALCULATE(",
               "    [# of All CVs],",
               "    DATEADD(Calendar[Date], -1, YEAR)",
-              ")"
+              ")+0"
             ],
             "formatString": "#,0"
           },
@@ -28457,7 +28457,7 @@
               "CALCULATE(",
               "    [# of Employed CVs],",
               "    DATEADD(Calendar[Date], -1, YEAR)",
-              ")"
+              ")+0"
             ],
             "formatString": "#,0"
           },
@@ -28468,7 +28468,7 @@
               "CALCULATE(",
               "    [# of Interviewed CVs],",
               "    DATEADD(Calendar[Date], -1, YEAR)",
-              ")"
+              ")+0"
             ],
             "formatString": "#,0"
           },
@@ -28479,7 +28479,7 @@
               "CALCULATE(",
               "    [# of Passed Interview CVs],",
               "    DATEADD(Calendar[Date], -1, YEAR)",
-              ")"
+              ")+0"
             ],
             "formatString": "#,0"
           },
@@ -28490,7 +28490,7 @@
               "CALCULATE(",
               "    [# of Offered CVs],",
               "    DATEADD(Calendar[Date], -1, YEAR)",
-              ")"
+              ")+0"
             ],
             "formatString": "#,0"
           },
@@ -28501,7 +28501,7 @@
               "CALCULATE(",
               "    [# of Qualified CVs],",
               "    DATEADD(Calendar[Date], -1, YEAR)",
-              ")"
+              ")+0"
             ],
             "formatString": "#,0"
           },
@@ -28521,7 +28521,7 @@
               "        'Calendar'[Date],",
               "        'HRT Application'[InterviewDate]",
               "    )",
-              ")"
+              ")+0"
             ],
             "formatString": "#,0"
           },
@@ -28536,7 +28536,7 @@
               "        'Calendar'[Date],",
               "        'HRT Application'[OfferDate]",
               "    )",
-              ")"
+              ")+0"
             ],
             "formatString": "#,0"
           },
@@ -28556,7 +28556,7 @@
               "        'Calendar'[Date],",
               "        'HRT Application'[InterviewDate]",
               "    )",
-              ")"
+              ")+0"
             ],
             "formatString": "#,0"
           },
@@ -28661,7 +28661,7 @@
               "    DISTINCTCOUNT('HRT Application'[ApplicationRecId]),",
               "    KEEPFILTERS('HRT Application'[IsQCV] = FALSE()),",
               "    KEEPFILTERS('HRT Application'[Status] = \"Rejection\")",
-              ")"
+              ")+0"
             ],
             "formatString": "#,0"
           },
@@ -28674,7 +28674,7 @@
               "    KEEPFILTERS('HRT Application'[IsInterviewedCV] = TRUE()),",
               "    KEEPFILTERS('HRT Application'[IsOfferedCV] = FALSE()),",
               "    KEEPFILTERS('HRT Application'[Status] = \"Rejection\")",
-              ")"
+              ")+0"
             ],
             "formatString": "#,0"
           },
@@ -35386,7 +35386,7 @@
               "SUMX(",
               "    'HRT Recruitment Cost',",
               "    COALESCE('HRT Recruitment Cost'[PO_GrossAmount], 0)",
-              ")+0"
+              ")"
             ],
             "formatString": "#,0"
           },
@@ -35397,7 +35397,7 @@
               "DIVIDE(",
               "    SUM('HRT Recruitment Cost'[PO_GrossAmount]),",
               "    'HRT Application'[# of Qualified CVs],",
-              "    0)+ 0"
+              "    0)"
             ],
             "formatString": "#,0"
           },
@@ -35405,10 +35405,13 @@
             "name": "# of PO Cost per Employed CV",
             "expression": [
               " ",
-              "DIVIDE(",
-              "    SUM('HRT Recruitment Cost'[PO_GrossAmount]),",
-              "    'HRT Application'[# of Employed CVs],",
-              "    0)+0"
+              "COALESCE(",
+              "    DIVIDE(",
+              "        SUM('HRT Recruitment Cost'[PO_GrossAmount]),",
+              "        'HRT Application'[# of Employed CVs],",
+              "        0),",
+              "    0",
+              ")"
             ],
             "formatString": "#,0"
           },
@@ -35499,7 +35502,7 @@
               "DIVIDE(",
               "    SUM('HRT Recruitment Cost'[PO_GrossAmount]),",
               "    'HRT Application'[# of Interviewed CVs],",
-              "    0)+ 0"
+              "    0)"
             ],
             "formatString": "#,0"
           },
@@ -35556,7 +35559,7 @@
               "DIVIDE(",
               "    SUM('HRT Recruitment Cost'[PO_GrossAmount]),",
               "    'HRT Application'[# of Offered CVs],",
-              "    0)+ 0"
+              "    0)"
             ],
             "formatString": "#,0"
           },
