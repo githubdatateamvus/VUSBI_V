@@ -31533,35 +31533,6 @@
         ]
       },
       {
-        "name": "AdjustValue",
-        "columns": [
-          {
-            "type": "calculatedTableColumn",
-            "name": "IsAdjusted",
-            "dataType": "int64",
-            "isNameInferred": true,
-            "isDataTypeInferred": true,
-            "sourceColumn": "[IsAdjusted]"
-          }
-        ],
-        "partitions": [
-          {
-            "name": "CalculatedTable 1",
-            "source": {
-              "type": "calculated",
-              "expression": [
-                "DATATABLE(",
-                "    \"IsAdjusted\", INTEGER,",
-                "    {",
-                "        {0},{1}",
-                "    }",
-                ")"
-              ]
-            }
-          }
-        ]
-      },
-      {
         "name": "Teacher Substitution Request",
         "columns": [
           {
@@ -36908,6 +36879,35 @@
             "name": "% Actual Expensive (Monthly)",
             "expression": " DIVIDE([# of PO Gross Amount], [# of Monthly Sourcing Budget (Active Student)],0)",
             "formatString": "0.00%;-0.00%;0.00%"
+          }
+        ]
+      },
+      {
+        "name": "AdjustValue",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "IsAdjusted",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[IsAdjusted]"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "CalculatedTable 1",
+            "source": {
+              "type": "calculated",
+              "expression": [
+                "DATATABLE(",
+                "    \"IsAdjusted\", INTEGER,",
+                "    {",
+                "        {0},{1}",
+                "    }",
+                ")"
+              ]
+            }
           }
         ]
       }
@@ -49981,14 +49981,6 @@
             ]
           },
           {
-            "name": "AdjustValue",
-            "columns": [
-              {
-                "name": "IsAdjusted"
-              }
-            ]
-          },
-          {
             "name": "Teacher Substitution Request",
             "columns": [
               {
@@ -52005,6 +51997,14 @@
               },
               {
                 "name": "% Actual Expensive (Monthly)"
+              }
+            ]
+          },
+          {
+            "name": "AdjustValue",
+            "columns": [
+              {
+                "name": "IsAdjusted"
               }
             ]
           },
@@ -80556,6 +80556,16 @@
           {
             "memberName": "hoquangduongdoan@vus-etsc.edu.vn",
             "memberId": "hoquangduongdoan@vus-etsc.edu.vn",
+            "identityProvider": "AzureAD"
+          },
+          {
+            "memberName": "lythingocnga@vus-etsc.edu.vn",
+            "memberId": "lythingocnga@vus-etsc.edu.vn",
+            "identityProvider": "AzureAD"
+          },
+          {
+            "memberName": "nguyenthuthao@vus-etsc.edu.vn",
+            "memberId": "nguyenthuthao@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
           }
         ],
