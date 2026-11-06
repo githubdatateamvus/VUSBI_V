@@ -28431,11 +28431,17 @@
             "name": "# of TAs",
             "expression": [
               "",
-              "CALCULATE(",
-              "    DISTINCTCOUNT('HRT Application'[ApplicationRecId]),",
-              "    KEEPFILTERS('HRT Application'[TeacherType] = \"TA\"),",
-              "    KEEPFILTERS('HRT Application'[TestCode] <> BLANK())",
-              ")+0"
+              "VAR _Result =",
+              "    CALCULATE(",
+              "        DISTINCTCOUNT('HRT Application'[ApplicationRecId]),",
+              "        KEEPFILTERS('HRT Application'[TeacherType] = \"TA\"),",
+              "        KEEPFILTERS('HRT Application'[TestCode] <> BLANK())",
+              "    )",
+              "RETURN",
+              "    IF(",
+              "        NOT ISEMPTY('HRT Application'),",
+              "        _Result + 0",
+              "    )"
             ],
             "formatString": "#,0"
           },
@@ -31529,6 +31535,35 @@
               "var to_date = max('Calendar'[Date])",
               "Return CALCULATE(DISTINCTCOUNT('HRT Application Location'[ApplicationId]),'HRT Application'[IsCVNonDup] = TRUE(),'Calendar'[Date] >= from_date && 'Calendar'[Date] <=to_date)"
             ]
+          }
+        ]
+      },
+      {
+        "name": "AdjustValue",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "IsAdjusted",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[IsAdjusted]"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "CalculatedTable 1",
+            "source": {
+              "type": "calculated",
+              "expression": [
+                "DATATABLE(",
+                "    \"IsAdjusted\", INTEGER,",
+                "    {",
+                "        {0},{1}",
+                "    }",
+                ")"
+              ]
+            }
           }
         ]
       },
@@ -36879,35 +36914,6 @@
             "name": "% Actual Expensive (Monthly)",
             "expression": " DIVIDE([# of PO Gross Amount], [# of Monthly Sourcing Budget (Active Student)],0)",
             "formatString": "0.00%;-0.00%;0.00%"
-          }
-        ]
-      },
-      {
-        "name": "AdjustValue",
-        "columns": [
-          {
-            "type": "calculatedTableColumn",
-            "name": "IsAdjusted",
-            "dataType": "int64",
-            "isNameInferred": true,
-            "isDataTypeInferred": true,
-            "sourceColumn": "[IsAdjusted]"
-          }
-        ],
-        "partitions": [
-          {
-            "name": "CalculatedTable 1",
-            "source": {
-              "type": "calculated",
-              "expression": [
-                "DATATABLE(",
-                "    \"IsAdjusted\", INTEGER,",
-                "    {",
-                "        {0},{1}",
-                "    }",
-                ")"
-              ]
-            }
           }
         ]
       }
@@ -49981,6 +49987,14 @@
             ]
           },
           {
+            "name": "AdjustValue",
+            "columns": [
+              {
+                "name": "IsAdjusted"
+              }
+            ]
+          },
+          {
             "name": "Teacher Substitution Request",
             "columns": [
               {
@@ -51997,14 +52011,6 @@
               },
               {
                 "name": "% Actual Expensive (Monthly)"
-              }
-            ]
-          },
-          {
-            "name": "AdjustValue",
-            "columns": [
-              {
-                "name": "IsAdjusted"
               }
             ]
           },
