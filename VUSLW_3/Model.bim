@@ -20,7 +20,7 @@
           "AuthenticationKind": "OAuth2",
           "kind": "SQL",
           "path": "yvpqbupzx7kufapfd474wcexte-5bh5o7llmmnuta22i6u45pycty.datawarehouse.fabric.microsoft.com;VUSDWHPRO",
-          "Expires": "Wed, 21 Oct 2026 08:10:42 GMT"
+          "Expires": "Mon, 09 Nov 2026 05:37:25 GMT"
         }
       }
     ],
@@ -779,6 +779,16 @@
               "    Y",
               ")"
             ]
+          },
+          {
+            "name": "District",
+            "dataType": "string",
+            "sourceColumn": "District"
+          },
+          {
+            "name": "Catchment",
+            "dataType": "string",
+            "sourceColumn": "Catchment"
           }
         ],
         "partitions": [
@@ -28176,10 +28186,16 @@
             "name": "# of All CVs",
             "expression": [
               "",
-              "CALCULATE(",
-              "    DISTINCTCOUNT('HRT Application'[ApplicationRecId]),",
-              "    KEEPFILTERS('HRT Application'[IsCVNonDup] = TRUE())",
-              ")+0"
+              "VAR _Result =",
+              "    CALCULATE(",
+              "        DISTINCTCOUNT('HRT Application'[ApplicationRecId]),",
+              "        KEEPFILTERS('HRT Application'[IsCVNonDup] = TRUE())",
+              "    )",
+              "RETURN",
+              "    IF(",
+              "        NOT ISEMPTY('HRT Application'),",
+              "        _Result + 0",
+              "    )"
             ],
             "formatString": "#,0"
           },
@@ -28187,10 +28203,16 @@
             "name": "# of Employed CVs",
             "expression": [
               "",
-              "CALCULATE(",
-              "    DISTINCTCOUNT('HRT Application'[ApplicationRecId]),",
-              "    KEEPFILTERS('HRT Application'[IsEmployedCV] = TRUE())",
-              ")+0"
+              "VAR _Result =",
+              "    CALCULATE(",
+              "        DISTINCTCOUNT('HRT Application'[ApplicationRecId]),",
+              "        KEEPFILTERS('HRT Application'[IsEmployedCV] = TRUE())",
+              "    )",
+              "RETURN",
+              "    IF(",
+              "        NOT ISEMPTY('HRT Application'),",
+              "        _Result + 0",
+              "    )"
             ],
             "formatString": "#,0"
           },
@@ -28198,10 +28220,16 @@
             "name": "# of Interviewed CVs",
             "expression": [
               "",
-              "CALCULATE(",
-              "    DISTINCTCOUNT('HRT Application'[ApplicationRecId]),",
-              "    KEEPFILTERS('HRT Application'[IsInterviewedCV] = TRUE())",
-              ")+0"
+              "VAR _Result =",
+              "    CALCULATE(",
+              "        DISTINCTCOUNT('HRT Application'[ApplicationRecId]),",
+              "        KEEPFILTERS('HRT Application'[IsInterviewedCV] = TRUE())",
+              "    )",
+              "RETURN",
+              "    IF(",
+              "        NOT ISEMPTY('HRT Application'),",
+              "        _Result + 0",
+              "    )"
             ],
             "formatString": "#,0"
           },
@@ -28212,7 +28240,7 @@
               "CALCULATE(",
               "    DISTINCTCOUNT('HRT Application'[ApplicationRecId]),",
               "    KEEPFILTERS('HRT Application'[IsOfferedCV] = TRUE())",
-              ")+0"
+              ")"
             ],
             "formatString": "#,0"
           },
@@ -28223,7 +28251,7 @@
               "CALCULATE(",
               "    DISTINCTCOUNT('HRT Application'[ApplicationRecId]),",
               "    KEEPFILTERS('HRT Application'[IsPassedInterviewCV] = TRUE())",
-              ")+0"
+              ")"
             ],
             "formatString": "#,0"
           },
@@ -28234,7 +28262,7 @@
               "CALCULATE(",
               "    DISTINCTCOUNT('HRT Application'[ApplicationRecId]),",
               "    KEEPFILTERS('HRT Application'[IsQCV] = TRUE())",
-              ")+0"
+              ")"
             ],
             "formatString": "#,0"
           },
@@ -28342,7 +28370,7 @@
               "CALCULATE(",
               "    AVERAGE('HRT Application'[AplToHireDays]),",
               "    NOT ISBLANK('HRT Application'[AplToHireDays])",
-              ")+0"
+              ")"
             ],
             "formatString": "#,0"
           },
@@ -28352,7 +28380,7 @@
               "",
               "CALCULATE(",
               "    DISTINCTCOUNT('HRT Application'[ApplicationRecId]),",
-              "    'HRT Application'[IsRejectedCV] = TRUE())+0"
+              "    'HRT Application'[IsRejectedCV] = TRUE())"
             ],
             "formatString": "#,0"
           },
@@ -28367,7 +28395,7 @@
               "        'Calendar'[Date],",
               "        'HRT Application'[InterviewDate]",
               "    )",
-              ")+0"
+              ")"
             ],
             "formatString": "#,0"
           },
@@ -28382,7 +28410,7 @@
               "        'Calendar'[Date],",
               "        'HRT Application'[AssignDate]",
               "    )",
-              ")+0"
+              ")"
             ],
             "formatString": "#,0"
           },
@@ -28397,7 +28425,7 @@
               "        'Calendar'[Date],",
               "        'HRT Application'[OfferDate]",
               "    )",
-              ")+0"
+              ")"
             ],
             "formatString": "#,0"
           },
@@ -28410,7 +28438,7 @@
               "    KEEPFILTERS('HRT Application'[TestRanking] <> BLANK()),",
               "    KEEPFILTERS('HRT Application'[TeacherType] = \"TA\"),",
               "    KEEPFILTERS('HRT Application'[TestCode] <> BLANK())",
-              "    )+0"
+              "    )"
             ],
             "formatString": "#,0"
           },
@@ -28423,7 +28451,7 @@
               "    KEEPFILTERS('HRT Application'[TestRanking] = BLANK()),",
               "    KEEPFILTERS('HRT Application'[TeacherType] = \"TA\"),",
               "    KEEPFILTERS('HRT Application'[TestCode] <> BLANK())",
-              ")+0"
+              ")"
             ],
             "formatString": "#,0"
           },
@@ -28452,7 +28480,7 @@
               "CALCULATE(",
               "    [# of All CVs],",
               "    DATEADD(Calendar[Date], -1, YEAR)",
-              ")+0"
+              ")"
             ],
             "formatString": "#,0"
           },
@@ -28463,7 +28491,7 @@
               "CALCULATE(",
               "    [# of Employed CVs],",
               "    DATEADD(Calendar[Date], -1, YEAR)",
-              ")+0"
+              ")"
             ],
             "formatString": "#,0"
           },
@@ -28485,7 +28513,7 @@
               "CALCULATE(",
               "    [# of Passed Interview CVs],",
               "    DATEADD(Calendar[Date], -1, YEAR)",
-              ")+0"
+              ")"
             ],
             "formatString": "#,0"
           },
@@ -28496,7 +28524,7 @@
               "CALCULATE(",
               "    [# of Offered CVs],",
               "    DATEADD(Calendar[Date], -1, YEAR)",
-              ")+0"
+              ")"
             ],
             "formatString": "#,0"
           },
@@ -28507,7 +28535,7 @@
               "CALCULATE(",
               "    [# of Qualified CVs],",
               "    DATEADD(Calendar[Date], -1, YEAR)",
-              ")+0"
+              ")"
             ],
             "formatString": "#,0"
           },
@@ -28527,7 +28555,7 @@
               "        'Calendar'[Date],",
               "        'HRT Application'[InterviewDate]",
               "    )",
-              ")+0"
+              ")"
             ],
             "formatString": "#,0"
           },
@@ -28542,7 +28570,7 @@
               "        'Calendar'[Date],",
               "        'HRT Application'[OfferDate]",
               "    )",
-              ")+0"
+              ")"
             ],
             "formatString": "#,0"
           },
@@ -28556,13 +28584,13 @@
             "expression": [
               "",
               "CALCULATE(",
-              "    DISTINCTCOUNT('HRT Application'[ApplicationRecId]),",
-              "    'HRT Application'[IsConfirmedInterviewCV] = TRUE(),",
-              "    USERELATIONSHIP(",
-              "        'Calendar'[Date],",
-              "        'HRT Application'[InterviewDate]",
-              "    )",
-              ")+0"
+              "    IF(",
+              "        NOT ISEMPTY('HRT Application'),",
+              "        DISTINCTCOUNT('HRT Application'[ApplicationRecId]) + 0",
+              "    ),",
+              "    KEEPFILTERS('HRT Application'[IsConfirmedInterviewCV] = TRUE()),",
+              "    USERELATIONSHIP('Calendar'[Date], 'HRT Application'[InterviewDate])",
+              ")"
             ],
             "formatString": "#,0"
           },
@@ -28663,11 +28691,17 @@
             "name": "# of UnQualified CVs",
             "expression": [
               "",
-              "CALCULATE(",
-              "    DISTINCTCOUNT('HRT Application'[ApplicationRecId]),",
-              "    KEEPFILTERS('HRT Application'[IsQCV] = FALSE()),",
-              "    KEEPFILTERS('HRT Application'[Status] = \"Rejection\")",
-              ")+0"
+              "VAR _Result =",
+              "    CALCULATE(",
+              "        DISTINCTCOUNT('HRT Application'[ApplicationRecId]),",
+              "        KEEPFILTERS('HRT Application'[IsQCV] = FALSE()),",
+              "        KEEPFILTERS('HRT Application'[Status] = \"Rejection\")",
+              "    )",
+              "RETURN",
+              "    IF(",
+              "        NOT ISEMPTY('HRT Application'),",
+              "        _Result + 0",
+              "    )"
             ],
             "formatString": "#,0"
           },
@@ -28680,7 +28714,7 @@
               "    KEEPFILTERS('HRT Application'[IsInterviewedCV] = TRUE()),",
               "    KEEPFILTERS('HRT Application'[IsOfferedCV] = FALSE()),",
               "    KEEPFILTERS('HRT Application'[Status] = \"Rejection\")",
-              ")+0"
+              ")"
             ],
             "formatString": "#,0"
           },
