@@ -35630,27 +35630,6 @@
             "name": "Most Cost Effective Text",
             "expression": [
               "",
-              "VAR MinValue =",
-              "    MINX(",
-              "        ALLSELECTED('Recruitment Media'[Media]),",
-              "        [# of PO Cost per Employed CV]",
-              "    )",
-              "VAR MinSource =",
-              "    CALCULATE(",
-              "        SELECTEDVALUE('Recruitment Media'[Media]),",
-              "        FILTER(",
-              "            ALLSELECTED('Recruitment Media'[Media]),",
-              "            [# of PO Cost per Employed CV] = MinValue",
-              "        )",
-              "    )",
-              "RETURN",
-              "    MinSource & \" (\" & FORMAT(MinValue/1000000, \"0.0\") & \"M VND/hire)\""
-            ]
-          },
-          {
-            "name": "Least Cost Effective Text",
-            "expression": [
-              "",
               "VAR MaxValue =",
               "    MAXX(",
               "        ALLSELECTED('Recruitment Media'[Media]),",
@@ -35666,6 +35645,27 @@
               "    )",
               "RETURN",
               "    MaxSource & \" (\" & FORMAT(MaxValue/1000000, \"0.0\") & \"M VND/hire)\""
+            ]
+          },
+          {
+            "name": "Least Cost Effective Text",
+            "expression": [
+              "",
+              "VAR MinValue =",
+              "    MINX(",
+              "        ALLSELECTED('Recruitment Media'[Media]),",
+              "        [# of PO Cost per Employed CV]",
+              "    )",
+              "VAR MinSource =",
+              "    CALCULATE(",
+              "        SELECTEDVALUE('Recruitment Media'[Media]),",
+              "        FILTER(",
+              "            ALLSELECTED('Recruitment Media'[Media]),",
+              "            [# of PO Cost per Employed CV] = MinValue",
+              "        )",
+              "    )",
+              "RETURN",
+              "    MinSource & \" (\" & FORMAT(MinValue/1000000, \"0.0\") & \"M VND/hire)\""
             ]
           },
           {
