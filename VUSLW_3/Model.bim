@@ -31573,35 +31573,6 @@
         ]
       },
       {
-        "name": "AdjustValue",
-        "columns": [
-          {
-            "type": "calculatedTableColumn",
-            "name": "IsAdjusted",
-            "dataType": "int64",
-            "isNameInferred": true,
-            "isDataTypeInferred": true,
-            "sourceColumn": "[IsAdjusted]"
-          }
-        ],
-        "partitions": [
-          {
-            "name": "CalculatedTable 1",
-            "source": {
-              "type": "calculated",
-              "expression": [
-                "DATATABLE(",
-                "    \"IsAdjusted\", INTEGER,",
-                "    {",
-                "        {0},{1}",
-                "    }",
-                ")"
-              ]
-            }
-          }
-        ]
-      },
-      {
         "name": "Teacher Substitution Request",
         "columns": [
           {
@@ -33516,6 +33487,33 @@
               "    ),",
               "    REMOVEFILTERS('Budget Management'[Department]), NOT('Budget Management'[CampusCode] IN \t{\"NWE_VPTT\", \"HCM_VPTT\", \"EDU_VPTT\"})",
               ")"
+            ]
+          },
+          {
+            "name": "# of KPI budget/act students",
+            "expression": [
+              "",
+              "var CurrentYear=SELECTEDVALUE('Calendar'[Year])",
+              "var CurrentDept=SELECTEDVALUE('Budget Management'[Department])",
+              "",
+              "RETURN",
+              "\tSWITCH (",
+              "\t\tTRUE(),",
+              "\t\tCurrentYear = 2026 && CurrentDept = \"TQM\", 12678,",
+              "\t\tCurrentYear = 2026 && CurrentDept = \"HRT\", 513176,",
+              "\t\tCurrentYear <> 2026, 0,",
+              "\t\t284918",
+              "\t)"
+            ]
+          },
+          {
+            "name": "# of YTD Actual Cost Per Student",
+            "expression": [
+              "",
+              "DIVIDE(",
+              "\t[# of YTD Cost Per Student],",
+              "\t[# of KPI budget/act students]",
+              "\t)"
             ]
           }
         ]
@@ -36948,6 +36946,35 @@
             "name": "% Actual Expensive (Monthly)",
             "expression": " DIVIDE([# of PO Gross Amount], [# of Monthly Sourcing Budget (Active Student)],0)",
             "formatString": "0.00%;-0.00%;0.00%"
+          }
+        ]
+      },
+      {
+        "name": "AdjustValue",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "IsAdjusted",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[IsAdjusted]"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "CalculatedTable 1",
+            "source": {
+              "type": "calculated",
+              "expression": [
+                "DATATABLE(",
+                "    \"IsAdjusted\", INTEGER,",
+                "    {",
+                "        {0},{1}",
+                "    }",
+                ")"
+              ]
+            }
           }
         ]
       }
@@ -50021,14 +50048,6 @@
             ]
           },
           {
-            "name": "AdjustValue",
-            "columns": [
-              {
-                "name": "IsAdjusted"
-              }
-            ]
-          },
-          {
             "name": "Teacher Substitution Request",
             "columns": [
               {
@@ -50693,6 +50712,12 @@
               },
               {
                 "name": "# of Real Time Actual Student"
+              },
+              {
+                "name": "# of KPI budget/act students"
+              },
+              {
+                "name": "# of YTD Actual Cost Per Student"
               }
             ]
           },
@@ -52045,6 +52070,14 @@
               },
               {
                 "name": "% Actual Expensive (Monthly)"
+              }
+            ]
+          },
+          {
+            "name": "AdjustValue",
+            "columns": [
+              {
+                "name": "IsAdjusted"
               }
             ]
           },
@@ -62483,6 +62516,12 @@
               },
               {
                 "name": "% YTD Budget Approved Var"
+              },
+              {
+                "name": "# of KPI budget/act students"
+              },
+              {
+                "name": "# of YTD Actual Cost Per Student"
               }
             ]
           }
@@ -69759,6 +69798,12 @@
               },
               {
                 "name": "% YTD Budget Approved Var"
+              },
+              {
+                "name": "# of KPI budget/act students"
+              },
+              {
+                "name": "# of YTD Actual Cost Per Student"
               }
             ]
           }
@@ -79047,6 +79092,12 @@
               },
               {
                 "name": "% YTD Budget Approved Var"
+              },
+              {
+                "name": "# of KPI budget/act students"
+              },
+              {
+                "name": "# of YTD Actual Cost Per Student"
               }
             ]
           }
