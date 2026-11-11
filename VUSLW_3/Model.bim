@@ -33507,7 +33507,7 @@
             ]
           },
           {
-            "name": "# of YTD Actual Cost Per Student",
+            "name": "% Cost per student / KPI",
             "expression": [
               "",
               "DIVIDE(",
@@ -50717,7 +50717,7 @@
                 "name": "# of KPI budget/act students"
               },
               {
-                "name": "# of YTD Actual Cost Per Student"
+                "name": "% Cost per student / KPI"
               }
             ]
           },
@@ -62521,7 +62521,7 @@
                 "name": "# of KPI budget/act students"
               },
               {
-                "name": "# of YTD Actual Cost Per Student"
+                "name": "% Cost per student / KPI"
               }
             ]
           }
@@ -69803,7 +69803,7 @@
                 "name": "# of KPI budget/act students"
               },
               {
-                "name": "# of YTD Actual Cost Per Student"
+                "name": "% Cost per student / KPI"
               }
             ]
           }
@@ -79097,7 +79097,7 @@
                 "name": "# of KPI budget/act students"
               },
               {
-                "name": "# of YTD Actual Cost Per Student"
+                "name": "% Cost per student / KPI"
               }
             ]
           }
