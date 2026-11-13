@@ -20,7 +20,7 @@
           "AuthenticationKind": "OAuth2",
           "kind": "SQL",
           "path": "yvpqbupzx7kufapfd474wcexte-5bh5o7llmmnuta22i6u45pycty.datawarehouse.fabric.microsoft.com;VUSDWHPRO",
-          "Expires": "Mon, 09 Nov 2026 05:37:25 GMT"
+          "Expires": "Fri, 13 Nov 2026 05:13:49 GMT"
         }
       }
     ],
@@ -32673,6 +32673,11 @@
             "name": "Real Time Actual Student",
             "dataType": "int64",
             "sourceColumn": "Real Time Actual Student"
+          },
+          {
+            "name": "TQM Hide",
+            "dataType": "int64",
+            "sourceColumn": "TQM Hide"
           }
         ],
         "partitions": [
@@ -50536,6 +50541,9 @@
               },
               {
                 "name": "Real Time Actual Student"
+              },
+              {
+                "name": "TQM Hide"
               }
             ],
             "measures": [
@@ -62340,6 +62348,9 @@
               },
               {
                 "name": "SubTeam"
+              },
+              {
+                "name": "TQM Hide"
               }
             ],
             "measures": [
@@ -69622,6 +69633,9 @@
               },
               {
                 "name": "SubTeam"
+              },
+              {
+                "name": "TQM Hide"
               }
             ],
             "measures": [
@@ -78916,6 +78930,9 @@
               },
               {
                 "name": "SubTeam"
+              },
+              {
+                "name": "TQM Hide"
               }
             ],
             "measures": [
