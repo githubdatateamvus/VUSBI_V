@@ -33486,11 +33486,12 @@
               "        SUMMARIZE(",
               "            'Budget Management',",
               "            'Budget Management'[CampusCode],",
-              "            'Budget Management'[MonthYear]",
+              "            'Budget Management'[MonthYear],",
+              "            'Budget Management'[Department]",
               "        ),",
               "        CALCULATE( MAX('Budget Management'[Real Time Actual Student]))",
               "    ),",
-              "    REMOVEFILTERS('Budget Management'[Department]), NOT('Budget Management'[CampusCode] IN \t{\"NWE_VPTT\", \"HCM_VPTT\", \"EDU_VPTT\"})",
+              "    NOT('Budget Management'[CampusCode] IN \t{\"NWE_VPTT\", \"HCM_VPTT\", \"EDU_VPTT\"})",
               ")"
             ]
           },
