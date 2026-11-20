@@ -80686,6 +80686,11 @@
             "memberName": "tranngoctram1@vus-etsc.edu.vn",
             "memberId": "tranngoctram1@vus-etsc.edu.vn",
             "identityProvider": "AzureAD"
+          },
+          {
+            "memberName": "nguyenthithaonhi1@vus-etsc.edu.vn",
+            "memberId": "nguyenthithaonhi1@vus-etsc.edu.vn",
+            "identityProvider": "AzureAD"
           }
         ],
         "tablePermissions": [
